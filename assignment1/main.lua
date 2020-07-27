@@ -90,7 +90,9 @@ function love.load()
         ['score'] = love.audio.newSource('score.wav', 'static'),
 
         -- https://freesound.org/people/xsgianni/sounds/388079/
-        ['music'] = love.audio.newSource('marios_way.mp3', 'static')
+        ['music'] = love.audio.newSource('marios_way.mp3', 'static'),
+        --pause sound##########################################################
+        ['pause']=love.audio.newSource('pause.wav', 'static')
     }
 
     -- kick off music
@@ -166,9 +168,10 @@ pause=false
 function love.update(dt)--############################################################### U P D A T E 
     --PAUSE OR NOT
     if love.keyboard.wasPressed('p') then-------------------------------------
+        sounds['pause']:play()
         if pause == true then 
             pause = false
-        elseif pause==false then    
+        elseif pause==false then  
             pause = true 
         end
     end
