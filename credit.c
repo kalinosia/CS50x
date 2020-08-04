@@ -29,10 +29,10 @@ int main(void)
    }
    
    sum=suma+sumb;
-   if(sum%10!=0){
-       printf("INVALID\n");
-       return 0;
-   }
+   //if(sum%10!=0){
+//       printf("INVALID\n");
+ //      return 0;
+   //}
    //////////////////////////////////////////////
     
     if (numer<999999999999){
@@ -40,6 +40,10 @@ int main(void)
     }
     //else if ((numer>=(100*ten)&&numer<(1000*ten))||(numer>=(10000*ten)&&numer<(100000*ten))){//Visa uses 13- and 16-digit numbers
     else if ((numer>=(400*ten)&&numer<(500*ten))||(numer>=(400000*ten)&&numer<(500000*ten))){//and all Visa numbers start with 4
+        if(sum%10!=0){
+            printf("INVALID\n");
+            return 0;
+        }
         printf("VISA\n");
     }                                                                                                   //MasterCard uses 16-digit numbers
     else if(numer>=(510000*ten)&&numer<(560000*ten)){      //most MasterCard numbers start with 51, 52, 53, 54, or 55
