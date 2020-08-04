@@ -41,7 +41,7 @@ int main(void)
     //else if ((numer>=(100*ten)&&numer<(1000*ten))||(numer>=(10000*ten)&&numer<(100000*ten))){//Visa uses 13- and 16-digit numbers
     else if ((numer>=(400*ten)&&numer<(500*ten))||(numer>=(400000*ten)&&numer<(500000*ten))){//and all Visa numbers start with 4
         if(sum%10!=0){
-            printf("INVALID\n");
+            printf("INVALID!\n");
             return 0;
         }
         printf("VISA\n");
