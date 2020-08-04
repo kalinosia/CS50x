@@ -4,7 +4,7 @@
 int main(void)
 {
     unsigned long long numer = get_long("Number: ");
-    printf("%llu\n",numer);
+    //printf("%llu\n",numer);
     unsigned long long ten=10000000000; //ten zero
     
     if (numer<999999999999){
@@ -15,15 +15,15 @@ int main(void)
         printf("VISA\n");
     }                                                                                                   //MasterCard uses 16-digit numbers
     else if(numer>=(510000*ten)&&numer<(560000*ten)){      //most MasterCard numbers start with 51, 52, 53, 54, or 55
-            printf("MasterCard\n");                             
+            printf("MASTERCARD\n");                             
     }
     else if (numer>=(10000*ten)&&numer<(10000*ten)){//American Express uses 15-digit numbers,
         printf("American Express???\n");
     }
     else if ((numer>=(340000000000000)&&numer<(350000000000000))||(numer>=(370000000000000)&&numer<(380000000000000))){//All American Express numbers start with 34 or 37;
-        printf("American Express\n");
+        printf("AMEX\n");
     }
     else{
-        printf("invalid\n");
+        printf("INVALID\n");
     }
 }
