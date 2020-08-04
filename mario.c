@@ -27,7 +27,6 @@ int main(void)
     }
     linia[h]='\0';
     int z=1;
-    printf("%s\n", linia);
     for(int i=0; i<n; i++){
         linia[n-z]='#';
         linia[n+z+1]='#';
