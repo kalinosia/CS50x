@@ -3,23 +3,37 @@
 
 int main(void)
 {
-    int n;
+    
+    int n=0;
     
     while (n<1||n>8)
     {
         n = get_int("Height: ");
     }
-    char znaki[n-1];
-    char odwrocone[n-1];
+    /*
+    int q=n-1;
+    char znaki[n];
+    char odwrocone[n];
+    printf("TU: %s  %s\n\n", znaki, odwrocone);
     for(int j=0; j<n; j++){
-        znaki[j]=' ';
-        odwrocone[j]=' ';
+        znaki[j]='_';
+        odwrocone[j]='_';
+    }
+    */
+    int h=2*n+2;
+    char linia[h];
+    for(int j=0; j<h; j++){
+        linia[j]=' ';
+    }
+    linia[h]='\0';
+    int z=1;
+    printf("%s\n", linia);
+    for(int i=0; i<n; i++){
+        linia[n-z]='#';
+        linia[n+z+1]='#';
+        printf("%s\n", linia);
+        z++;
     }
     
-    for(int i=0; i<n; i++){
-        odwrocone[i]='#';
-        znaki[n-1-i]='#';
-        printf("%s  %s\n", znaki, odwrocone);
-    }
    
 }
