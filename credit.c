@@ -5,7 +5,35 @@ int main(void)
 {
     unsigned long long numer = get_long("Number: ");
     //printf("%llu\n",numer);
-    unsigned long long ten=10000000000; //ten zero
+    unsigned  long ten=10000000000; //ten zero
+    ////////////////////////////
+    unsigned long long num=numer;
+    int a=0;
+    int suma=0;
+    int b=0;
+    int c=0;
+    int sumb=0;
+    int sum=0;
+   //////////////////////////////////////////
+   for(int i=1;i<=8;i++){
+   a=num % 10;
+   suma=suma+a;
+   num=num-a;
+   num=num/10;
+   
+   c=num % 10;
+   b=c*2;
+   sumb=sumb+b;
+   num=num-c;
+   num=num/10;
+   }
+   
+   sum=suma+sumb;
+   if(sum%10!=0){
+       printf("INVALID\n");
+       return 0;
+   }
+   //////////////////////////////////////////////
     
     if (numer<999999999999){
         printf("INVALID\n");
