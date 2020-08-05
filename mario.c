@@ -11,20 +11,24 @@ int main(void)
         n = get_int("Height: ");
     }
     int z=1;
-     for (int i = 0; i < n; i++){
-        for(int k=0; k<n-z; k++){
+    for (int i = 0; i < n; i++)
+    {
+        for(int k=0; k<n-z; k++)
+        {
             printf(" ");
-         }
-        for (int j = 0; j < z; j++){
-          printf("#");
+        }
+        for (int j = 0; j < z; j++)
+        {
+            printf("#");//left pyramids
         }
         printf("  ");
-        for (int j = 0; j < z; j++){
-          printf("#");
+        for (int j = 0; j < z; j++) //gap between
+        {
+            printf("#"); //right pyramids 
         }
         printf("\n");
         z++;
-        }
+    }
     
    
 }
