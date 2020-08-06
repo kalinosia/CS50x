@@ -10,15 +10,12 @@ int compare (const void * a, const void * b)
 
 int main(void)
 {
-    //string key = get_string("");
-    //int x= strlen(key);
-    //printf("%i",x);
 
 //ASK FOR INPUT KEY
     string key = get_string("");
 
     int len=strlen(key);
-    
+
 //LETTER TO INT TO CHECK IF ONLY LETTERS
     unsigned int array[len];//text string=>int array or one int ???
 //ONLY LETTER ..............................................................^?
@@ -30,17 +27,18 @@ int main(void)
             continue;
         }
         else{
-            printf("Muszą być litery...........\n");
+            printf("Usage: ./substitution key\n");
             return 0;
         }
     }
 //CHECK IF IS 26 LETTERS
     if (len!=26){
         printf("Key must contain 26 characters.");
-        return 0; //????????
+        return 0;
     }
-    
-//IF LOWERCASE LETTER MAKE UPPERCASE 
+
+//IF LOWERCASE LETTER MAKE UPPERCASE
+/* NOT
     char KEY[len];
     for (int k =0; k < len; k++){
         if (key[k] >='a'&& key[k] <='z'){
@@ -50,41 +48,86 @@ int main(void)
         KEY[k]=key[k];
         }
     }
+*/
+//EVERY LETTER UPPERCASE
 
+int Array[len];
+    for(int s=0; s<len; s++){
+        if (array[s]>=97 && array[s]<=122){
+            Array[s]=array[s]-32;
+        }
+        else{
+            Array[s]=array[s];
+        }
 
+    }
+    
 //SORT ARRAY TO CHECK IF EVERY LETTER IS IN KEY
-    int sortArray[len];
-    qsort (array, len, sizeof(int), compare);
+ int sortArray[len];   
+    qsort (Array, len, sizeof(int), compare);
     for (int n=0; n<len; n++){
-        sortArray[n]= array[n];
+        sortArray[n]= Array[n];
         //printf(" %i ", sortArray[n]);
     }
 //CHECK IF EVERY LETTER IS IN KEY (26)
     const int alfabet[26]={65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90};
+    
+    
+
     for (int l=0; l<26; l++){
         if (alfabet[l]!=sortArray[l]){
             printf("not all letters");
+            return 0;
         }
     }
-    
+
 //plaintext:  -------------------------------------------------------------------------------------------------
-    string plaintext = get_string("plaintext:  ");
-    int index[strlen(plaintext)];
-    int ciphertext[strlen(plaintext)];
+    string plaintext = get_string("plaintext:  ");//IN
+    int index[strlen(plaintext)];//indexs in IN
+    int ciphertext[strlen(plaintext)]; //OUT
+    const int alfabetAll[52]={65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+        97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,11};
+    //array TEXT to NUMBER
+    unsigned int arrayPlaintext[strlen(plaintext)];
+    for (int i=0; i < strlen(plaintext); i++){
+        arrayPlaintext[i]=plaintext[i];
+    }
+    ////////////////////////////////////
     
-    //array
-    for(int p=0; p<strlen(plaintext); p++){ //for every letter in plintext
-        for (int f=0; f<26; f++){           //looking for in alfabet
-            if (plaintext[p]==alfabet[f]){  //if first letter in plaintext == letter in alfabet
-                index[p]=f;              // want indext this letter in alfabet
+    
+    for(int p=0; p<strlen(plaintext); p++){ //for every letter in plaintext or number
+        if ((arrayPlaintext[p] >= 65 && arrayPlaintext[p] <= 90) || (arrayPlaintext[p] >= 97 && arrayPlaintext[p] <= 122)) { //check if letter
+            for (int f=0; f<52; f++){           //looking for in alfabet
+                if (plaintext[p]==alfabetAll[f]){  //if first letter in plaintext == letter in alfabet
+                    index[p]=f;              // want indext this letter in alfabet
+                }
             }
         }
+        else{
+                index[p]=-1;//if not letter index 52 so not index in alfabet
+            }
     }
-    for (int z=0; z<strlen(plaintext); z++){ //for every letter in plaintext
-        ciphertext[z]=key[index[z]];        //letter in ciphertext = get index from alfabet and give it to key[index]
-    }
+    
     printf("ciphertext: ");
-    for (int x=0; x<strlen(plaintext); x++){ // for every letter in ciphertext (int!!)
-        printf("%c", ciphertext[x]);        //print char not int
-    }
+    for (int z=0; z<strlen(plaintext); z++){ //for every letter in plaintext
+        if (index[z]==-1) {
+            ciphertext[z]=plaintext[z];
+            printf("%c",plaintext[z]);
+        }
+        else {
+            if (index[z]>=26){
+                index[z]=index[z]-26;
+                ciphertext[z]=key[index[z]];
+                ciphertext[z]=(int) ciphertext[z]+32;
+            }
+            else{
+            ciphertext[z]=key[index[z]]; //letter in ciphertext = get index from alfabet and give it to key[index]
+            }
+            printf("%c", ciphertext[z]); 
+    }}
+    
+    //for (int x=0; x<strlen(plaintext); x++){ // for every letter in ciphertext (int!!)
+      //  if (index[p]==x) printf("%i",ciphertext[x]);
+        //else printf("%c", ciphertext[x]);        //print char not int
+    //}
 }
