@@ -33,10 +33,10 @@ int main(void)
     float L = (100*  letters)/ words;
     float S = (100 *  sentences)/ words;
     
-    float index = 0.0588 * L - 0.296 * S - 15.8 ;
+    float index = 0.0588 * (float) L - 0.296 * (float) S - 15.8 ;
     //printf("%f\n", index);
     
-    if (index < 1) printf("Before Grade 1");
+    if (index < 1) printf("Before Grade 1\n");
     else if (index >= 1 && index <2) printf("Grade 1\n");
     else if (index >= 2 && index <3) printf("Grade 2\n");
     else if (index >= 3 && index <4) printf("Grade 3\n");
