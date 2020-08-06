@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
 #include<string.h>
+#include <math.h>
+
 
 int main(void)
 {
@@ -30,11 +32,14 @@ int main(void)
     //printf("Letters: %i\n", letters);
     //printf("Sentence: %i\n", sentences);
     
-    float L = (100*  letters)/ words;
-    float S = (100 *  sentences)/ words;
-    
+    float L = (100*  (float) letters)/ (float) words;
+    float S = (100 *  (float) sentences)/ (float) words;
+    //printf("L: %f\n", L);
+    //printf("S: %f\n", S);
     float index = 0.0588 * (float) L - 0.296 * (float) S - 15.8 ;
-    //printf("%f\n", index);
+    //printf("Index: %f\n", index);
+    index = round( index );
+    //printf("Inedx near: %f\n", index);
     
     if (index < 1) printf("Before Grade 1\n");
     else if (index >= 1 && index <2) printf("Grade 1\n");
