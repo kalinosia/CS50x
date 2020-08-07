@@ -136,11 +136,6 @@ int Array[len];
                     
                 printf("%c",smallLetterInt);
                 
-                
-                //ciphertext[z]=((int) ciphertext[z]+32);?????????????
-                //int bigLetterInt=atoi(bigLetter);
-                //printf("%i", bigLetterInt);
-                //printf("%d", ciphertext[z]);
             }
             else{
             ciphertext[z]=KEY[index[z]]; //letter in ciphertext = get index from alfabet and give it to key[index]
@@ -148,10 +143,7 @@ int Array[len];
             printf("%c", ciphertext[z]); 
     }}
     
-    //for (int x=0; x<strlen(plaintext); x++){ // for every letter in ciphertext (int!!)
-      //  if (index[p]==x) printf("%i",ciphertext[x]);
-        //else printf("%c", ciphertext[x]);        //print char not int
-    //}
+    
     printf("\n");
     //return 0;
 }
