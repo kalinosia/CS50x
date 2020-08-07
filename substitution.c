@@ -28,13 +28,13 @@ int main(void)
         }
         else{
             printf("Usage: ./substitution key\n");
-            return 0;
+            return 1;
         }
     }
 //CHECK IF IS 26 LETTERS
     if (len!=26){
         printf("Key must contain 26 characters.");
-        return 0;
+        return 1;
     }
 
 //IF LOWERCASE LETTER MAKE UPPERCASE
