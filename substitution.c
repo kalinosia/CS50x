@@ -130,8 +130,9 @@ int Array[len];
                 char bigLetter =key[index[z]];
                 printf("%c", bigLetter);/////////////////
                 //ciphertext[z]=((int) ciphertext[z]+32);?????????????
-                
-                printf("%d", ciphertext[z]);
+                //int bigLetterInt=atoi(bigLetter);
+                //printf("%i", bigLetterInt);
+                //printf("%d", ciphertext[z]);
             }
             else{
             ciphertext[z]=key[index[z]]; //letter in ciphertext = get index from alfabet and give it to key[index]
