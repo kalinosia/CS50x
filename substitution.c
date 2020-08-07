@@ -130,4 +130,6 @@ int Array[len];
       //  if (index[p]==x) printf("%i",ciphertext[x]);
         //else printf("%c", ciphertext[x]);        //print char not int
     //}
+    printf("\n");
+    return 0;
 }
