@@ -144,5 +144,5 @@ int Array[len];
         //else printf("%c", ciphertext[x]);        //print char not int
     //}
     printf("\n");
-    return 0;
+    //return 0;
 }
