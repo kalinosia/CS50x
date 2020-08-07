@@ -128,7 +128,15 @@ int Array[len];
             if (index[z]>=26){
                 index[z]=index[z]-26;
                 char bigLetter =key[index[z]];
-                printf("%c", bigLetter);/////////////////
+                //printf("%c", bigLetter);/////////////////
+                
+                int bigLetterInt = (int) bigLetter;
+                
+                if (bigLetterInt<91){
+                    int smallLetterInt=bigLetterInt+26;
+                    printf("%c",smallLetterInt);
+                }else printf("%i", bigLetterInt);
+                
                 //ciphertext[z]=((int) ciphertext[z]+32);?????????????
                 //int bigLetterInt=atoi(bigLetter);
                 //printf("%i", bigLetterInt);
