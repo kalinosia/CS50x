@@ -24,7 +24,7 @@ int main(int argc, string argv[])
     //from string to int because input in string
     int key = atoi(argv[1]);
     //printf("%i\n", key);
-
+    key=key%26;
 
     //scanf("%i", &key);
     //if (!(key>0 && key<1000)) return 1;
