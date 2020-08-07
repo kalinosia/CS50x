@@ -15,9 +15,14 @@ int main(int argc, string argv[])
     string key = argv[1];
     //printf("%s\n", key);
     
-//ASK FOR INPUT KEY
-    //string key = get_string("");
 
+    //string key = get_string("");
+//if without key
+    if (argc == 1) {
+        printf("Usage: ./substitution key");
+        return 1;
+    }
+//ASK FOR INPUT KEY    
     int len=strlen(key);
 
 //LETTER TO INT TO CHECK IF ONLY LETTERS
