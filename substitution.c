@@ -81,7 +81,7 @@ int Array[len];
     for (int l=0; l<26; l++){
         if (alfabet[l]!=sortArray[l]){
             printf("not all letters");
-            return 0;
+            return 1;
         }
     }
 
