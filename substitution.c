@@ -8,11 +8,15 @@ int compare (const void * a, const void * b)
   return ( *(int*)a - *(int*)b );
 }
 
-int main(void)
+int main(int argc, string argv[])
 {
-
+    
+    //printf("%s\n", argv[1]);
+    string key = argv[1];
+    //printf("%s\n", key);
+    
 //ASK FOR INPUT KEY
-    string key = get_string("");
+    //string key = get_string("");
 
     int len=strlen(key);
 
