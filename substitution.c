@@ -17,6 +17,7 @@ int main(int argc, string argv[])
     
 
     //string key = get_string("");
+    
 //if without key
     if (argc == 1) {
         printf("Usage: ./substitution key");
