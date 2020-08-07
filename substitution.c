@@ -120,14 +120,18 @@ int Array[len];
     printf("ciphertext: ");
     for (int z=0; z<strlen(plaintext); z++){ //for every letter in plaintext
         if (index[z]==-1) {
-            ciphertext[z]=plaintext[z];
+            //printf("LICZBA\n");
+            //ciphertext[z]=plaintext[z];
             printf("%c",plaintext[z]);
         }
         else {
             if (index[z]>=26){
                 index[z]=index[z]-26;
-                ciphertext[z]=key[index[z]];
-                ciphertext[z]=(int) ciphertext[z]+32;
+                char bigLetter =key[index[z]];
+                printf("%c", bigLetter);/////////////////
+                //ciphertext[z]=((int) ciphertext[z]+32);
+                
+                printf("%d", ciphertext[z]);
             }
             else{
             ciphertext[z]=key[index[z]]; //letter in ciphertext = get index from alfabet and give it to key[index]
