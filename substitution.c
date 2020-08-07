@@ -46,8 +46,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
-//IF LOWERCASE LETTER MAKE UPPERCASE
-/* NOT
+//IF LOWERCASE LETTER MAKE UPPERCASE------------
+
     char KEY[len];
     for (int k =0; k < len; k++){
         if (key[k] >='a'&& key[k] <='z'){
@@ -57,7 +57,7 @@ int main(int argc, string argv[])
         KEY[k]=key[k];
         }
     }
-*/
+    
 //EVERY LETTER UPPERCASE
 
 int Array[len];
@@ -127,15 +127,15 @@ int Array[len];
         else {
             if (index[z]>=26){
                 index[z]=index[z]-26;
-                char bigLetter =key[index[z]];
+                char bigLetter =KEY[index[z]];
                 //printf("%c", bigLetter);/////////////////
                 
                 int bigLetterInt = (int) bigLetter;
                 
-                if (bigLetterInt<91){
-                    int smallLetterInt=bigLetterInt+26;
-                    printf("%c",smallLetterInt);
-                }else printf("%c", bigLetter);
+                int smallLetterInt=bigLetterInt+32;//122-90
+                    
+                printf("%c",smallLetterInt);
+                
                 
                 //ciphertext[z]=((int) ciphertext[z]+32);?????????????
                 //int bigLetterInt=atoi(bigLetter);
@@ -143,7 +143,7 @@ int Array[len];
                 //printf("%d", ciphertext[z]);
             }
             else{
-            ciphertext[z]=key[index[z]]; //letter in ciphertext = get index from alfabet and give it to key[index]
+            ciphertext[z]=KEY[index[z]]; //letter in ciphertext = get index from alfabet and give it to key[index]
             }
             printf("%c", ciphertext[z]); 
     }}
