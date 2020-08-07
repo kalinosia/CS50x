@@ -129,7 +129,7 @@ int Array[len];
                 index[z]=index[z]-26;
                 char bigLetter =key[index[z]];
                 printf("%c", bigLetter);/////////////////
-                //ciphertext[z]=((int) ciphertext[z]+32);
+                //ciphertext[z]=((int) ciphertext[z]+32);?????????????
                 
                 printf("%d", ciphertext[z]);
             }
