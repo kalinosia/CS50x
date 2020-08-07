@@ -38,74 +38,7 @@ int main(int argc, string argv[])
     //}
     
 
-/*
-    int len=strlen(key);
 
-//LETTER TO INT TO CHECK IF ONLY LETTERS
-    unsigned int array[len];//text string=>int array or one int ???
-//ONLY LETTER ..............................................................^?
-    for (int i=0; i < len; i++){
-        array[i]=key[i];
-        //printf("%i\n", array[i]);
-
-        if ((array[i] >= 65 && array[i] <= 90) || (array[i] >= 97 && array[i] <= 122)) {
-            continue;
-        }
-        else{
-            printf("Usage: ./substitution key\n");
-            return 1;
-        }
-    }
-//CHECK IF IS 26 LETTERS
-    if (len!=26){
-        printf("Key must contain 26 characters.");
-        return 1;
-    }
-
-//IF LOWERCASE LETTER MAKE UPPERCASE
- NOT
-    char KEY[len];
-    for (int k =0; k < len; k++){
-        if (key[k] >='a'&& key[k] <='z'){
-            KEY[k]= (char) (int) key[k] -32;
-        }
-        else{
-        KEY[k]=key[k];
-        }
-    }
-/end
-//EVERY LETTER UPPERCASE
-
-int Array[len];
-    for(int s=0; s<len; s++){
-        if (array[s]>=97 && array[s]<=122){
-            Array[s]=array[s]-32;
-        }
-        else{
-            Array[s]=array[s];
-        }
-
-    }
-    
-//SORT ARRAY TO CHECK IF EVERY LETTER IS IN KEY
- int sortArray[len];   
-    qsort (Array, len, sizeof(int), compare);
-    for (int n=0; n<len; n++){
-        sortArray[n]= Array[n];
-        //printf(" %i ", sortArray[n]);
-    }
-//CHECK IF EVERY LETTER IS IN KEY (26)
-    const int alfabet[26]={65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90};
-    
-    
-
-    for (int l=0; l<26; l++){
-        if (alfabet[l]!=sortArray[l]){
-            printf("not all letters");
-            return 0;
-        }
-    }
-*/
 //plaintext:  -------------------------------------------------------------------------------------------------
     string plaintext = get_string("plaintext:  ");//IN
    //printf("%lu\n",strlen(plaintext));//indexs in IN
@@ -142,7 +75,7 @@ int Array[len];
             }
     }
     
-    //printf("\n");
+    printf("\n");
     
     //return 0;
     
