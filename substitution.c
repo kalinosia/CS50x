@@ -135,7 +135,7 @@ int Array[len];
                 if (bigLetterInt<91){
                     int smallLetterInt=bigLetterInt+26;
                     printf("%c",smallLetterInt);
-                }else printf("%i", bigLetterInt);
+                }else printf("%c", bigLetterInt);
                 
                 //ciphertext[z]=((int) ciphertext[z]+32);?????????????
                 //int bigLetterInt=atoi(bigLetter);
