@@ -191,12 +191,15 @@ void tabulate(void)
    bool find=false;
     for (int i=0; i < voter_count; i++){
         find=false;
-        for (int k=0; k < candidate_count; k++){
+        for (int k=0; k < candidate_count; k++){ //k only when candidates eliminated
             for (int j=0; j < candidate_count; j++){
                 if (preferences[i][k]==j && !(candidates[j].eliminated)){
                     candidates[j].votes+=1;
                     find=true;
+                }
+                else if(preferences[i][k]==j){
                     break;
+                    find=false;
                 }
             }
             if (find==true) break;
