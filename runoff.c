@@ -248,6 +248,7 @@ bool is_tie(int min)
     
     bool tie=false;
     for (int i=0; i < candidate_count; i++){
+        if(candidates[i].eliminated) break;
         if (!(candidates[i].votes==min)){
             tie=false; //for calm mind
             return false;
