@@ -188,14 +188,18 @@ void tabulate(void)
         }
     }
    */
-    for (int i=0; i < voter_count; i++){   
-        for (int j=0; j < candidate_count; j++){
-            for (int k=0; k < candidate_count; k++){
+   bool find=false;
+    for (int i=0; i < voter_count; i++){
+        find=false;
+        for (int k=0; k < candidate_count; k++){
+            for (int j=0; j < candidate_count; j++){
                 if (preferences[i][k]==j && !(candidates[j].eliminated)){
                     candidates[j].votes+=1;
+                    find=true;
                     break;
                 }
             }
+            if (find==true) break;
         }
     }
     for (int j=0; j < candidate_count; j++) {
