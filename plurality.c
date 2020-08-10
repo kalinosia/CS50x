@@ -70,7 +70,7 @@ bool vote(string name)
     bool name_bool=false;
     //char name_char= (char) name;
     for (int j=0; j < candidate_count; j++){
-            if(!(name[0]==candidates[j].name[0])) j++;
+            if(!(name[0]==candidates[j].name[0])) return 0;
             else{
                 for (int k=0; k < (strlen(name)); k++){
                 if (name[k]==candidates[j].name[k]) name_bool=true;
