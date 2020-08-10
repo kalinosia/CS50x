@@ -68,25 +68,31 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     bool name_bool=false;
-    //char name_char= (char) name;
-    for (int j=0; j < candidate_count; j++){
-            if (name[0]==candidates[j].name[0]) {
-                for (int k=0; k < (strlen(name)); k++){
-                if (name[k]==candidates[j].name[k]) name_bool=true;
-                else name_bool=false;
-            }
-            if (name_bool==true){
-                candidates[j].votes +=1;
-                return true;
-            }
-        }
-    }
-
-    //printf("\n%s  wypisane \n", name);
-    //printf("\n %c wypisana litera \n", name[1]);
-    //printf("\n%s \n", candidates[0].name);
     
-    // TODO
+    for (int j=0; j < candidate_count; j++){
+        if (strlen(name)==strlen(candidates[j].name)){
+            for (int k=0; k < (strlen(name)); k++){
+                if (name[k]==candidates[j].name[k]) {
+                    name_bool=true;
+                }else{
+                    name_bool=false;
+                    break;
+                }
+            }
+            
+        }
+        if (name_bool==true){
+            candidates[j].votes +=1;
+            return true;
+            }
+    
+    }
+    
+    //for(int j=0; j < candidate_count; j++){
+    //    printf("\n %s : %i", candidates[j].name,candidates[j].votes);
+    //}
+
+    
     return false;
 }
 
@@ -94,13 +100,30 @@ bool vote(string name)
 void print_winner(void)
 {
     //candidates[i].votes
+    
     // TODO
+    
+    int v=0; //winner point
+    bool more_winners=false;
     for (int i = 1; i < candidate_count; ++i) {
-        if (candidates[0].votes < candidates[i].votes){
-            candidates[0].votes = candidates[i].votes;
-    }}
-
-    printf("%s", candidates[0].name);
+        if (candidates[i].votes > v){
+            v = candidates[i].votes;
+        }
+        else if (candidates[i].votes == v && v != 0){
+            more_winners=true;  
+        }
+    }
+    
+    
+    //if (more_winners==true){
+        for(int j = 0; j < candidate_count; j++){
+            if (candidates[j].votes == v) printf("%s\n", candidates[j].name); 
+        }
+    
+    
+    //printf("%i %i",candidates[0].votes, csndidates[1.])
+    //if (candidates[0].votes==candidates[1].votes)
+   // printf("%s\n", candidates[0].name);
     
     return;
 }
