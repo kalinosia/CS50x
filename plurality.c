@@ -70,8 +70,7 @@ bool vote(string name)
     bool name_bool=false;
     //char name_char= (char) name;
     for (int j=0; j < candidate_count; j++){
-            if(!(name[0]==candidates[j].name[0])) continue;
-            else{
+            if (name[0]==candidates[j].name[0]) {
                 for (int k=0; k < (strlen(name)); k++){
                 if (name[k]==candidates[j].name[k]) name_bool=true;
                 else name_bool=false;
@@ -101,7 +100,7 @@ void print_winner(void)
             candidates[0].votes = candidates[i].votes;
     }}
 
-    printf("Largest element = %s", candidates[0].name);
+    printf("%s", candidates[0].name);
     
     return;
 }
