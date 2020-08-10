@@ -119,7 +119,7 @@ int main(int argc, string argv[])
         // Eliminate anyone with minimum number of votes
         eliminate(min);
 
-        // Reset vote counts back to zero
+        // Reset vote counts back to zero!!!!!!!!!!
         for (int i = 0; i < candidate_count; i++)
         {
             candidates[i].votes = 0;
@@ -137,17 +137,12 @@ bool vote(int voter, int rank, string name)
         if (strlen(name)==strlen(candidates[j].name)){
             if (strcmp(candidates[j].name, name)==0) {
                 exist_candidate=true;
-                //candidates[j].votes+=1;
                 preferences[voter][rank]=j;
             }
         }
     }
    
-    if (exist_candidate==true){
-        return true;
-        
-    } 
-    
+    if (exist_candidate==true) return true; 
     else return false;
     
 }
@@ -156,8 +151,8 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    
-   
+    /*
+   //vote for candidate
     for (int i=0; i < voter_count; i++){   
         for (int j=0; j < candidate_count; j++){
             if (preferences[i][0]==j && !(candidates[j].eliminated)){
@@ -170,8 +165,6 @@ void tabulate(void)
     for (int j=0; j < candidate_count; j++) {
         if ((candidates[j].votes >= voter_count/2+1)&& candidates[j].eliminated==false){
             winner=candidates[j].name;
-            //return print_winner();//??  
-            //print_winner()=true;
         } 
     }
     
@@ -194,8 +187,23 @@ void tabulate(void)
             }
         }
     }
-   
-   
+   */
+    for (int i=0; i < voter_count; i++){   
+        for (int j=0; j < candidate_count; j++){
+            for (int k=0; k < candidate_count; k++){
+                if (preferences[i][k]==j && !(candidates[j].eliminated)){
+                    candidates[j].votes+=1;
+                    break;
+                }
+            }
+        }
+    }
+    for (int j=0; j < candidate_count; j++) {
+        if ((candidates[j].votes >= voter_count/2+1)&& candidates[j].eliminated==false){
+            winner=candidates[j].name;
+        } 
+    }
+    
     return;
 }
 
@@ -206,13 +214,11 @@ bool print_winner(void)
       for (int j=0; j < candidate_count; j++) {
         if ((candidates[j].votes >= voter_count/2+1)&& candidates[j].eliminated==false){
             winner=candidates[j].name;
-            //return print_winner();//??  
-            //print_winner()=true;
             printf("%s\n", winner );
             return true;
         } 
     }
-    //printf("%s", winner );
+    
     return false;
 }
 
