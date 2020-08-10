@@ -120,9 +120,6 @@ void print_winner(void)
             if (candidates[j].votes == v) printf("%s\n", candidates[j].name); 
         }
     
-    
-    //printf("%i %i",candidates[0].votes, csndidates[1.])
-    //if (candidates[0].votes==candidates[1].votes)
    // printf("%s\n", candidates[0].name);
     
     return;
