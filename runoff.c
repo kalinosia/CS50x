@@ -34,7 +34,7 @@ bool is_tie(int min);
 void eliminate(int min);
 
 string winner;
-int min=0;
+//int min=0;
 
 int main(int argc, string argv[])
 {
@@ -220,10 +220,11 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
-
+    int min=0;
     for (int i=0; i < candidate_count; i++){
         if(candidates[i].votes <= min && !(candidates[i].eliminated)) min=candidates[i].votes;
     }
+    return min;
     return 0;
 }
 
@@ -231,15 +232,18 @@ int find_min(void)
 bool is_tie(int min)
 {
     // TODO
+    
     bool tie=false;
     for (int i=0; i < candidate_count; i++){
-        if !(candidates[i].votes==min){
+        if (!(candidates[i].votes==min)){
             tie=false; //for calm mind
             return false;
         }
         else tie=true;
     }
     if (tie==true) return true;
+    else return false;
+    
 }
 
 
