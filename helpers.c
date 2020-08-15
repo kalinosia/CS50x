@@ -49,95 +49,95 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     for (int i=1; i<height-1; i++){
         for (int j=1; j<width-1; j++){
-            hold[i][j].rgbtRed=(
+            hold[i][j].rgbtRed=round((float)(
             image[i-1][j-1].rgbtRed+image[i-1][j].rgbtRed+image[i-1][j+1].rgbtRed+
             image[i][j-1].rgbtRed+image[i][j].rgbtRed+image[i][j+1].rgbtRed+
-            image[i+1][j-1].rgbtRed+image[i+1][j].rgbtRed+image[i+1][j+1].rgbtRed)/9;
+            image[i+1][j-1].rgbtRed+image[i+1][j].rgbtRed+image[i+1][j+1].rgbtRed)/9);
 
-            hold[i][j].rgbtGreen=(
+            hold[i][j].rgbtGreen=round((float)(
             image[i-1][j-1].rgbtGreen+image[i-1][j].rgbtGreen+image[i-1][j+1].rgbtGreen+
             image[i][j-1].rgbtGreen+image[i][j].rgbtGreen+image[i][j+1].rgbtGreen+
-            image[i+1][j-1].rgbtGreen+image[i+1][j].rgbtGreen+image[i+1][j+1].rgbtGreen)/9;
+            image[i+1][j-1].rgbtGreen+image[i+1][j].rgbtGreen+image[i+1][j+1].rgbtGreen)/9);
 
-            hold[i][j].rgbtBlue=(
+            hold[i][j].rgbtBlue=round((float)(
             image[i-1][j-1].rgbtBlue+image[i-1][j].rgbtBlue+image[i-1][j+1].rgbtBlue+
             image[i][j-1].rgbtBlue+image[i][j].rgbtBlue+image[i][j+1].rgbtBlue+
-            image[i+1][j-1].rgbtBlue+image[i+1][j].rgbtBlue+image[i+1][j+1].rgbtBlue)/9;
+            image[i+1][j-1].rgbtBlue+image[i+1][j].rgbtBlue+image[i+1][j+1].rgbtBlue)/9);
         }
     }
     for (int i=1; i<height-1; i++){//pionowo lewo
-        hold[i][0].rgbtRed=(
+        hold[i][0].rgbtRed=round((float)(
             image[i-1][0].rgbtRed+image[i-1][1].rgbtRed+
             image[i][0].rgbtRed+image[i][1].rgbtRed+
-            image[i+1][0].rgbtRed+image[i+1][1].rgbtRed)/6;
+            image[i+1][0].rgbtRed+image[i+1][1].rgbtRed)/6);
 
-            hold[i][0].rgbtGreen=(
+            hold[i][0].rgbtGreen=round((float)(
             image[i-1][0].rgbtGreen+image[i-1][1].rgbtGreen+
             image[i][0].rgbtGreen+image[i][1].rgbtGreen+
-            image[i+1][0].rgbtGreen+image[i+1][1].rgbtGreen)/6;
+            image[i+1][0].rgbtGreen+image[i+1][1].rgbtGreen)/6);
 
-            hold[i][0].rgbtBlue=(
+            hold[i][0].rgbtBlue=round((float)(
             image[i-1][0].rgbtBlue+image[i-1][1].rgbtBlue+
             image[i][0].rgbtBlue+image[i][1].rgbtBlue+
-            image[i+1][0].rgbtBlue+image[i+1][1].rgbtBlue)/6;
+            image[i+1][0].rgbtBlue+image[i+1][1].rgbtBlue)/6);
     }
     for (int i=1; i<height-1; i++){//pionowo prawa j=width
-        hold[i][width-1].rgbtRed=(
+        hold[i][width-1].rgbtRed=round((float)(
             image[i-1][width-2].rgbtRed+image[i-1][width-1].rgbtRed+
             image[i][width-2].rgbtRed+image[i][width-1].rgbtRed+
-            image[i+1][width-2].rgbtRed+image[i+1][width-1].rgbtRed)/6;
+            image[i+1][width-2].rgbtRed+image[i+1][width-1].rgbtRed)/6);
 
-            hold[i][width-1].rgbtGreen=(
+            hold[i][width-1].rgbtGreen=round((float)(
             image[i-1][width-2].rgbtGreen+image[i-1][width-1].rgbtGreen+
             image[i][width-2].rgbtGreen+image[i][width-1].rgbtGreen+
-            image[i+1][width-2].rgbtGreen+image[i+1][width-1].rgbtGreen)/6;
+            image[i+1][width-2].rgbtGreen+image[i+1][width-1].rgbtGreen)/6);
 
-            hold[i][width-1].rgbtBlue=(
+            hold[i][width-1].rgbtBlue=round((float)(
             image[i-1][width-2].rgbtBlue+image[i-1][width-1].rgbtBlue+
             image[i][width-2].rgbtBlue+image[i][width-1].rgbtBlue+
-            image[i+1][width-2].rgbtBlue+image[i+1][width-1].rgbtBlue)/6;
+            image[i+1][width-2].rgbtBlue+image[i+1][width-1].rgbtBlue)/6);
     }
     for (int j=1; j<width-1; j++){//poziomo góra
-        hold[0][j].rgbtRed=(
+        hold[0][j].rgbtRed=round((float)(
             image[0][j-1].rgbtRed+image[0][j].rgbtRed+image[0][j+1].rgbtRed+
-            image[1][j-1].rgbtRed+image[1][j].rgbtRed+image[1][j+1].rgbtRed)/6;
+            image[1][j-1].rgbtRed+image[1][j].rgbtRed+image[1][j+1].rgbtRed)/6);
 
-            hold[0][j].rgbtGreen=(
+            hold[0][j].rgbtGreen=round((float)(
             image[0][j-1].rgbtGreen+image[0][j].rgbtGreen+image[0][j+1].rgbtGreen+
-            image[1][j-1].rgbtGreen+image[1][j].rgbtGreen+image[1][j+1].rgbtGreen)/6;
+            image[1][j-1].rgbtGreen+image[1][j].rgbtGreen+image[1][j+1].rgbtGreen)/6);
 
-            hold[0][j].rgbtBlue=(
+            hold[0][j].rgbtBlue=round((float)(
             image[0][j-1].rgbtBlue+image[0][j].rgbtBlue+image[0][j+1].rgbtBlue+
-            image[1][j-1].rgbtBlue+image[1][j].rgbtBlue+image[1][j+1].rgbtBlue)/6;
+            image[1][j-1].rgbtBlue+image[1][j].rgbtBlue+image[1][j+1].rgbtBlue)/6);
     }
     for (int j=1; j<width-1; j++){//poziomo dół
-        hold[height-1][j].rgbtRed=(
+        hold[height-1][j].rgbtRed=round((float)(
             image[height-2][j-1].rgbtRed+image[height-2][j].rgbtRed+image[height-2][j+1].rgbtRed+
-            image[height-1][j-1].rgbtRed+image[height-1][j].rgbtRed+image[height-1][j+1].rgbtRed)/6;
+            image[height-1][j-1].rgbtRed+image[height-1][j].rgbtRed+image[height-1][j+1].rgbtRed)/6);
 
-            hold[height-1][j].rgbtGreen=(
+            hold[height-1][j].rgbtGreen=round((float)(
             image[height-2][j-1].rgbtGreen+image[height-2][j].rgbtGreen+image[height-2][j+1].rgbtGreen+
-            image[height-1][j-1].rgbtGreen+image[height-1][j].rgbtGreen+image[height-1][j+1].rgbtGreen)/6;
+            image[height-1][j-1].rgbtGreen+image[height-1][j].rgbtGreen+image[height-1][j+1].rgbtGreen)/6);
 
-            hold[height-1][j].rgbtBlue=(
+            hold[height-1][j].rgbtBlue=round((float)(
             image[height-2][j-1].rgbtBlue+image[height-2][j].rgbtBlue+image[height-2][j+1].rgbtBlue+
-            image[height-1][j-1].rgbtBlue+image[height-1][j].rgbtBlue+image[height-1][j+1].rgbtBlue)/6;
+            image[height-1][j-1].rgbtBlue+image[height-1][j].rgbtBlue+image[height-1][j+1].rgbtBlue)/6);
     }
     //corners
-    hold[0][0].rgbtRed=(image[0][0].rgbtRed+image[0][1].rgbtRed+image[1][0].rgbtRed+image[1][1].rgbtRed)/4;
-    hold[0][width-1].rgbtRed=(image[0][width-2].rgbtRed+image[0][width-1].rgbtRed+image[1][width-2].rgbtRed+image[1][width-1].rgbtRed)/4;
-    hold[height-1][0].rgbtRed=(image[height-1][0].rgbtRed+image[height-2][0].rgbtRed+image[height-1][1].rgbtRed+image[height-2][1].rgbtRed)/4;
-    hold[height-1][width-1].rgbtRed=(image[height-1][width-1].rgbtRed+image[height-1][width-2].rgbtRed+image[height-2][width-2].rgbtRed+image[height-2][width-1].rgbtRed)/4;
+    hold[0][0].rgbtRed=round((float)(image[0][0].rgbtRed+image[0][1].rgbtRed+image[1][0].rgbtRed+image[1][1].rgbtRed)/4);
+    hold[0][width-1].rgbtRed=round((float)(image[0][width-2].rgbtRed+image[0][width-1].rgbtRed+image[1][width-2].rgbtRed+image[1][width-1].rgbtRed)/4);
+    hold[height-1][0].rgbtRed=round((float)(image[height-1][0].rgbtRed+image[height-2][0].rgbtRed+image[height-1][1].rgbtRed+image[height-2][1].rgbtRed)/4);
+    hold[height-1][width-1].rgbtRed=round((float)(image[height-1][width-1].rgbtRed+image[height-1][width-2].rgbtRed+image[height-2][width-2].rgbtRed+image[height-2][width-1].rgbtRed)/4);
 
-    hold[0][0].rgbtGreen=(image[0][0].rgbtGreen+image[0][1].rgbtGreen+image[1][0].rgbtGreen+image[1][1].rgbtGreen)/4;
-    hold[0][width-1].rgbtGreen=(image[0][width-2].rgbtGreen+image[0][width-1].rgbtGreen+image[1][width-2].rgbtGreen+image[1][width-1].rgbtGreen)/4;
-    hold[height-1][0].rgbtGreen=(image[height-1][0].rgbtGreen+image[height-2][0].rgbtGreen+image[height-1][1].rgbtGreen+image[height-2][1].rgbtGreen)/4;
-    hold[height-1][width-1].rgbtGreen=(image[height-1][width-1].rgbtGreen+image[height-1][width-2].rgbtGreen+image[height-2][width-2].rgbtGreen+image[height-2][width-1].rgbtGreen)/4;
+    hold[0][0].rgbtGreen=round((float)(image[0][0].rgbtGreen+image[0][1].rgbtGreen+image[1][0].rgbtGreen+image[1][1].rgbtGreen)/4);
+    hold[0][width-1].rgbtGreen=round((float)(image[0][width-2].rgbtGreen+image[0][width-1].rgbtGreen+image[1][width-2].rgbtGreen+image[1][width-1].rgbtGreen)/4);
+    hold[height-1][0].rgbtGreen=round((float)(image[height-1][0].rgbtGreen+image[height-2][0].rgbtGreen+image[height-1][1].rgbtGreen+image[height-2][1].rgbtGreen)/4);
+    hold[height-1][width-1].rgbtGreen=round((float)(image[height-1][width-1].rgbtGreen+image[height-1][width-2].rgbtGreen+image[height-2][width-2].rgbtGreen+image[height-2][width-1].rgbtGreen)/4);
 
-    hold[0][0].rgbtBlue=(image[0][0].rgbtBlue+image[0][1].rgbtBlue+image[1][0].rgbtBlue+image[1][1].rgbtBlue)/4;
-    hold[0][width-1].rgbtBlue=(image[0][width-2].rgbtBlue+image[0][width-1].rgbtBlue+image[1][width-2].rgbtBlue+image[1][width-1].rgbtBlue)/4;
-    hold[height-1][0].rgbtBlue=(image[height-1][0].rgbtBlue+image[height-2][0].rgbtBlue+image[height-1][1].rgbtBlue+image[height-2][1].rgbtBlue)/4;
-    hold[height-1][width-1].rgbtBlue=(image[height-1][width-1].rgbtBlue+image[height-1][width-2].rgbtBlue+image[height-2][width-2].rgbtBlue+image[height-2][width-1].rgbtBlue)/4;
+    hold[0][0].rgbtBlue=round((float)(image[0][0].rgbtBlue+image[0][1].rgbtBlue+image[1][0].rgbtBlue+image[1][1].rgbtBlue)/4);
+    hold[0][width-1].rgbtBlue=round((float)(image[0][width-2].rgbtBlue+image[0][width-1].rgbtBlue+image[1][width-2].rgbtBlue+image[1][width-1].rgbtBlue)/4);
+    hold[height-1][0].rgbtBlue=round((float)(image[height-1][0].rgbtBlue+image[height-2][0].rgbtBlue+image[height-1][1].rgbtBlue+image[height-2][1].rgbtBlue)/4);
+    hold[height-1][width-1].rgbtBlue=round((float)(image[height-1][width-1].rgbtBlue+image[height-1][width-2].rgbtBlue+image[height-2][width-2].rgbtBlue+image[height-2][width-1].rgbtBlue)/4);
 
      for (int i=0; i<height; i++){
         for (int j=0; j<width; j++){
