@@ -273,17 +273,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i+1][j-1].rgbtBlue*(1)+image[i+1][j].rgbtBlue*(2)+image[i+1][j+1].rgbtBlue*(1);
             }
             if (gxr!=0 || gyr!=0){
-                holdrgb=round(sqrt(pow(gxr,2)+pow(gyr,2)));
+                holdrgb=round(sqrt(pow((float) gxr,2)+pow((float) gyr,2)));
                 if (holdrgb > 255) hold[i][j].rgbtRed=255;
                 else  hold[i][j].rgbtRed=holdrgb;
             }
             if (gxg!=0 || gyg!=0){
-                holdrgb=round(sqrt(pow(gxg,2)+pow(gyg,2)));
+                holdrgb=round(sqrt(pow((float) gxg,2)+pow((float) gyg,2)));
                 if (holdrgb > 255) hold[i][j].rgbtGreen=255;
                 else hold[i][j].rgbtGreen=holdrgb;
             }
             if (gxb!=0 || gyb!=0){
-                holdrgb=round(sqrt(pow(gxb,2)+pow(gyb,2)));
+                holdrgb=round(sqrt(pow( (float) gxb,2)+pow((float) gyb,2)));
                 if (holdrgb > 255) hold[i][j].rgbtBlue=255;
                 else hold[i][j].rgbtBlue=holdrgb;
             }
