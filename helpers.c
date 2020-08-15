@@ -28,15 +28,15 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     if (width%2==0) w=width/2;
     else if (width%2==1) w=width/2+1;
     */
-    for (int i=0, k=0; i<height; i++){
-        for (int j=0, l=0; j<width/2; j++){
+    for (int i=0; i<height; i++){
+        for (int j=0, l=1; j<width/2; j++){
             hold[0][0]=image[i][j];
             image[i][j]=image[i][width-l];
-            image[i][width-l]=hold[0][0];//>??
+            image[i][width-l]=hold[0][0];
 
             l++;
         }
-        k++;
+        l=1;
     }
 
     return;
