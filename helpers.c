@@ -156,16 +156,22 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int gxr, gxg, gxb, gyr, gyg, gyb, holdrgb;
     for (int i=0; i<height; i++){
         for (int j=0; j<width; j++){
+            
             if (i==0 && j>0 && j<width-1){
-                gxr=image[i][j-1].rgbtRed*(-2)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(2)+
-                image[i+1][j-1].rgbtRed*(-1)+image[i+1][j].rgbtRed*(0)+image[i+1][j+1].rgbtRed*(1);
-                gyr=image[i+1][j-1].rgbtRed*(1)+image[i+1][j].rgbtRed*(2)+image[i+1][j+1].rgbtRed*(1);
-                gxg=image[i][j-1].rgbtGreen*(-2)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(2)+
-                image[i+1][j-1].rgbtGreen*(-1)+image[i+1][j].rgbtGreen*(0)+image[i+1][j+1].rgbtGreen*(1);
-                gyg=image[i+1][j-1].rgbtGreen*(1)+image[i+1][j].rgbtGreen*(2)+image[i+1][j+1].rgbtGreen*(1);
-                gxb=image[i][j-1].rgbtBlue*(-2)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(2)+
-                image[i+1][j-1].rgbtBlue*(-1)+image[i+1][j].rgbtBlue*(0)+image[i+1][j+1].rgbtBlue*(1);
-                gyb=image[i+1][j-1].rgbtBlue*(1)+image[i+1][j].rgbtBlue*(2)+image[i+1][j+1].rgbtBlue*(1);
+                gxr=(image[i][j-1].rgbtRed*(-2))+image[i][j].rgbtRed*(0)+(image[i][j+1].rgbtRed*(2))+
+                (image[i+1][j-1].rgbtRed*(-1))+image[i+1][j].rgbtRed*(0)+image[i+1][j+1].rgbtRed*(1);
+                
+                gyr=image[i+1][j-1].rgbtRed*(1)+(image[i+1][j].rgbtRed*(2))+image[i+1][j+1].rgbtRed*(1);
+                
+                gxg=(image[i][j-1].rgbtGreen*(-2))+image[i][j].rgbtGreen*(0)+(image[i][j+1].rgbtGreen*(2))+
+                (image[i+1][j-1].rgbtGreen*(-1))+image[i+1][j].rgbtGreen*(0)+image[i+1][j+1].rgbtGreen*(1);
+                
+                gyg=image[i+1][j-1].rgbtGreen*(1)+(image[i+1][j].rgbtGreen*(2))+image[i+1][j+1].rgbtGreen*(1);
+                
+                gxb=(image[i][j-1].rgbtBlue*(-2))+image[i][j].rgbtBlue*(0)+(image[i][j+1].rgbtBlue*(2))+
+                (image[i+1][j-1].rgbtBlue*(-1))+image[i+1][j].rgbtBlue*(0)+image[i+1][j+1].rgbtBlue*(1);
+                
+                gyb=image[i+1][j-1].rgbtBlue*(1)+(image[i+1][j].rgbtBlue*(2))+image[i+1][j+1].rgbtBlue*(1);
             }
             else if(i==height-1 && j>0 && j<width-1){
                 gxr=image[i-1][j-1].rgbtRed*(-1)+image[i-1][j].rgbtRed*(0)+image[i-1][j+1].rgbtRed*(1)+
