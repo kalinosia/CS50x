@@ -153,9 +153,65 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     
     RGBTRIPLE hold[height][width];
     int gxr, gxg, gxb, gyr, gyg, gyb, holdrgb;
-    for (int i=1; i<height-1; i++){
-        for (int j=1; j<width-1; j++){
-            
+    for (int i=0; i<height; i++){
+        for (int j=0; j<width; j++){
+            if (i==0){
+                gxr=image[i][j-1].rgbtRed*(-2)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(2)+
+                image[i+1][j-1].rgbtRed*(-1)+image[i+1][j].rgbtRed*(0)+image[i+1][j+1].rgbtRed*(1);
+                gyr=image[i][j-1].rgbtRed*(0)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(0)+
+                image[i+1][j-1].rgbtRed*(1)+image[i+1][j].rgbtRed*(2)+image[i+1][j+1].rgbtRed*(1);
+                gxg=image[i][j-1].rgbtGreen*(-2)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(2)+
+                image[i+1][j-1].rgbtGreen*(-1)+image[i+1][j].rgbtGreen*(0)+image[i+1][j+1].rgbtGreen*(1);
+                gygimage[i][j-1].rgbtGreen*(0)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(0)+
+                image[i+1][j-1].rgbtGreen*(1)+image[i+1][j].rgbtGreen*(2)+image[i+1][j+1].rgbtGreen*(1);
+                gxb=image[i][j-1].rgbtBlue*(-2)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(2)+
+                image[i+1][j-1].rgbtBlue*(-1)+image[i+1][j].rgbtBlue*(0)+image[i+1][j+1].rgbtBlue*(1);
+                gyb=image[i][j-1].rgbtBlue*(0)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(0)+
+                image[i+1][j-1].rgbtBlue*(1)+image[i+1][j].rgbtBlue*(2)+image[i+1][j+1].rgbtBlue*(1);
+            }
+            else if(i==height-1){
+                gxr=image[i-1][j-1].rgbtRed*(-1)+image[i-1][j].rgbtRed*(0)+image[i-1][j+1].rgbtRed*(1)+
+                image[i][j-1].rgbtRed*(-2)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(2);
+                gyr=image[i-1][j-1].rgbtRed*(-1)+image[i-1][j].rgbtRed*(-2)+image[i-1][j+1].rgbtRed*(-1)+
+                image[i][j-1].rgbtRed*(0)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(0);
+                gxg=image[i-1][j-1].rgbtGreen*(-1)+image[i-1][j].rgbtGreen*(0)+image[i-1][j+1].rgbtGreen*(1)+
+                image[i][j-1].rgbtGreen*(-2)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(2);
+                gyg=image[i-1][j-1].rgbtGreen*(-1)+image[i-1][j].rgbtGreen*(-2)+image[i-1][j+1].rgbtGreen*(-1)+
+                image[i][j-1].rgbtGreen*(0)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(0);
+                gxb=image[i-1][j-1].rgbtBlue*(-1)+image[i-1][j].rgbtBlue*(0)+image[i-1][j+1].rgbtBlue*(1)+
+                image[i][j-1].rgbtBlue*(-2)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(2);
+                gyb=image[i-1][j-1].rgbtBlue*(-1)+image[i-1][j].rgbtBlue*(-2)+image[i-1][j+1].rgbtBlue*(-1)+
+                image[i][j-1].rgbtBlue*(0)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(0);
+            }
+            else if(j==0){
+                gxr=image[i-1][j].rgbtRed*(0)+image[i-1][j+1].rgbtRed*(1)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(2)+image[i+1][j].rgbtRed*(0)+image[i+1][j+1].rgbtRed*(1);
+                gyr=image[i-1][j].rgbtRed*(-2)+image[i-1][j+1].rgbtRed*(-1)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(0)+image[i+1][j].rgbtRed*(2)+image[i+1][j+1].rgbtRed*(1);
+                gxg=image[i-1][j].rgbtGreen*(0)+image[i-1][j+1].rgbtGreen*(1)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(2)+image[i+1][j].rgbtGreen*(0)+image[i+1][j+1].rgbtGreen*(1);
+                gyg=image[i-1][j].rgbtGreen*(-2)+image[i-1][j+1].rgbtGreen*(-1)+image[i][j].rgbtGreen*(0)+image[i][j+1].rgbtGreen*(0)+image[i+1][j].rgbtGreen*(2)+image[i+1][j+1].rgbtGreen*(1);
+                gxb=image[i-1][j].rgbtBlue*(0)+image[i-1][j+1].rgbtBlue*(1)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(2)+image[i+1][j].rgbtBlue*(0)+image[i+1][j+1].rgbtBlue*(1);
+                gyb=image[i-1][j].rgbtBlue*(-2)+image[i-1][j+1].rgbtBlue*(-1)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(0)+image[i+1][j].rgbtBlue*(2)+image[i+1][j+1].rgbtBlue*(1); 
+            }
+            else if(j==width-1){
+                gxr=image[i-1][j-1].rgbtRed*(-1)+image[i-1][j].rgbtRed*(0)+
+                image[i][j-1].rgbtRed*(-2)+image[i][j].rgbtRed*(0)+
+                image[i+1][j-1].rgbtRed*(-1)+image[i+1][j].rgbtRed*(0);
+                gyr=image[i-1][j-1].rgbtRed*(-1)+image[i-1][j].rgbtRed*(-2)+
+                image[i][j-1].rgbtRed*(0)+image[i][j].rgbtRed*(0)+
+                image[i+1][j-1].rgbtRed*(1)+image[i+1][j].rgbtRed*(2);
+                gxg=image[i-1][j-1].rgbtGreen*(-1)+image[i-1][j].rgbtGreen*(0)+i
+                image[i][j-1].rgbtGreen*(-2)+image[i][j].rgbtGreen*(0)+
+                image[i+1][j-1].rgbtGreen*(-1)+image[i+1][j].rgbtGreen*(0);
+                gyg=image[i-1][j-1].rgbtGreen*(-1)+image[i-1][j].rgbtGreen*(-2)+
+                image[i][j-1].rgbtGreen*(0)+image[i][j].rgbtGreen*(0)+
+                image[i+1][j-1].rgbtGreen*(1)+image[i+1][j].rgbtGreen*(2);
+                gxb=image[i-1][j-1].rgbtBlue*(-1)+image[i-1][j].rgbtBlue*(0)+
+                image[i][j-1].rgbtBlue*(-2)+image[i][j].rgbtBlue*(0)+
+                image[i+1][j-1].rgbtBlue*(-1)+image[i+1][j].rgbtBlue*(0);
+                gyb=image[i-1][j-1].rgbtBlue*(-1)+image[i-1][j].rgbtBlue*(-2)+
+                image[i][j-1].rgbtBlue*(0)+image[i][j].rgbtBlue*(0)+
+                image[i+1][j-1].rgbtBlue*(1)+image[i+1][j].rgbtBlue*(2);
+            }
+            else{
             gxr=
             image[i-1][j-1].rgbtRed*(-1)+image[i-1][j].rgbtRed*(0)+image[i-1][j+1].rgbtRed*(1)+
             image[i][j-1].rgbtRed*(-2)+image[i][j].rgbtRed*(0)+image[i][j+1].rgbtRed*(2)+
@@ -182,7 +238,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i-1][j-1].rgbtBlue*(-1)+image[i-1][j].rgbtBlue*(-2)+image[i-1][j+1].rgbtBlue*(-1)+
             image[i][j-1].rgbtBlue*(0)+image[i][j].rgbtBlue*(0)+image[i][j+1].rgbtBlue*(0)+
             image[i+1][j-1].rgbtBlue*(1)+image[i+1][j].rgbtBlue*(2)+image[i+1][j+1].rgbtBlue*(1);
-       
+            }
             if (gxr!=0 || gyr!=0){
                 holdrgb=round(sqrt(pow(gxr,2)+pow(gyr,2)));
                 if (holdrgb > 255) hold[i][j].rgbtRed=255;
