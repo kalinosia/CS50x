@@ -157,7 +157,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     for (int i=0; i<height; i++){
         for (int j=0; j<width; j++){
             
-            if (i==0 && j>0 && j<width){
+            if (i==0 && j>0 && j<width-1){
                 gxr=(image[i][j-1].rgbtRed*(-2))+image[i][j].rgbtRed*(0)+(image[i][j+1].rgbtRed*(2))+
                 (image[i+1][j-1].rgbtRed*(-1))+image[i+1][j].rgbtRed*(0)+image[i+1][j+1].rgbtRed*(1);
                 
