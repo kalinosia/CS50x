@@ -314,9 +314,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     }
     */
 
-    for (int i=0; i<height; i++){
-        for (int j=0; j<width; j++){
-            image[i][j]= hold[i][j];
+    for (int z=0; z<height; z++){
+        for (int x=0; x<width; x++){
+            image[z][x]= hold[z][x];
         }
      }
     return;
