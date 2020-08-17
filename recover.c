@@ -2,52 +2,65 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include <string.h>
+//#include <string.h>
+#include <cs50.h>
 
 typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
-     if (argc < 2)
+     if (argc < 2) 
     {
         printf("Usage: runoff [candidate ...]\n");
         return 1;
     }
     
-    FILE *file = fopen(argv[1], "r");//open card.raw ->FILE *f=fopen(filename, "r");
-    if (file == NULL)
+    FILE *fileCard = fopen(argv[1], "r");//open card.raw ->FILE *f=fopen(filename, "r");
+    if (fileCard == NULL)
     {
         printf("Could not open.\n");
-        fclose(file);
-        return 1;
+        fclose(fileCard);
+        return 2;
     }
-    //filenames XXX.jpg 000.jpg
-    //sprintf(filename, "%03i.jpg",2);
-    //FILE *img=fopen(filename, "w");
-    //fread( data, size, number, inptr);
     
-    unsigned char buffer[512]; 
-    bool writing=false;
-    int z=0;
-    char filename[7];
-    FILE *img;
     
-    while (fread(&buffer, 512, 1, file)) {   //why1
-       // if (buffer == NULL) break;
     
+                        //BYTE *buffer=malloc(512); //[512]; ?? what to want
+    BYTE buffer[512]; //buffer to read 512 and check first 4 if jpg
+    bool firstFile=false; //when we find first jpg
+    int z=0;//filename next z++, 001 002 003 ... 999.jpg
+    char filename[8]; //XXX.jpg
+    FILE *img;//outfile
+    
+    while (fread(buffer, 512, 1, fileCard)) {   //fread( data, size, number, inptr);
+        //(fread(buffer, 512, 1, fileCard));
         if (buffer[0]==0xff && buffer[1]==0xd8 && buffer[2]==0xff && (buffer[3] & 0xf0)==0xe0){
-            if (img != NULL) fclose(img);
+            
+            if (!(firstFile)) firstFile=true; //if first file 
+            else fclose(img);//if not first file close first last file then save new
+           
+            //if (img != NULL) fclose(img);//if any img before
             
             sprintf(filename, "%03i.jpg",z);    
             img=fopen(filename, "w");
             z++;
-            writing=true;
-        }
-        if (writing == 1) fwrite(buffer, sizeof(buffer), 1, img);
+            //firstFile=true;
+    
+            fwrite(buffer, sizeof(buffer), 1, img);
         //if (buffer == NULL) fclose(img);
+       
+        if (img == NULL)
+            {
+                fclose(img);
+                free(buffer);
+                fprintf(stderr, "Unable to create image file %s", filename);
+                return 3;
+            }
+        }
+        else if (firstFile) fwrite(buffer, sizeof(buffer), 1, img);
     }
     fclose(img);
-    fclose(file);
+    fclose(fileCard);
       
                 
     //fread( int buffer[512], 512, number, file);
@@ -69,6 +82,6 @@ int main(int argc, char *argv[])
        // close
     //    open new
         
-    return 0;
+    return 0; 
 
 }
