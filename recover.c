@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     
     while (fread(buffer, 512, 1, fileCard)) {   //fread( data, size, number, inptr);
         //(fread(buffer, 512, 1, fileCard));
-        if (buffer[0]==0xff && buffer[1]==0xd8 && buffer[2]==0xff && (buffer[3] & 0xf0)==0xe0){
+        if (buffer[0]==0xff && buffer[1]==0xd8 && buffer[2]==0xff && (buffer[3] & 0xf0)==0xe0){ //if jpg start
             
             if (!(firstFile)) firstFile=true; //if first file 
             else fclose(img);//if not first file close first last file then save new
