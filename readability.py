@@ -1,4 +1,6 @@
-text=input("Text: ")
+from cs50 import get_string
+
+text=get_string("Text: ")
 
 letters=0
 words=0
@@ -6,24 +8,32 @@ sentences=0
 array=list(text)
 dlugosc=len(array)
 ##print(dlugosc)
-##print(array[0])
+##print(ord(array[0]))
 
 for letter in range(dlugosc):
     if (ord(array[letter])>=65 and ord(array[letter])<=90) or (ord(array[letter])>=97 and ord(array[letter])<=122) :
         letters=letters+1
-    elif ord(array[letter])==32 or ord(array[letter])==0:
+    elif ord(array[letter])==32 :
         words=words+1
     elif ord(array[letter])==46 or ord(array[letter])==63 or ord(array[letter])==33 : ##. ? !
         sentences=sentences+1
-        words=words+1
-        
-L = (100* letters)/  words
-S = (100 * sentences)/ words
+        ##words=words+1
+words=words+1 ##because last word not end with space
+
+##print ("Lettrs:", letters)  
+##print ("words:", words) 
+##print ("Sentences:", sentences) 
+
+L = 100 * (letters/  words)
+S = 100 * (sentences/ words)
+
 ##print("L:", L);
 ##print("S:", S);
+
 index = (0.0588 *  L) - (0.296 *  S) - 15.8 
-##print("Index: ", index);
+##print("Index: ", index); #########
 index = round( index );
+##print(index)##################
 
 if (index < 1): print("Before Grade 1")
 elif (index >= 1 and index <2): print("Grade 1");
