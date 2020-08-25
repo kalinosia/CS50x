@@ -6,11 +6,11 @@ letters=0
 words=0
 sentences=0
 array=list(text)
-dlugosc=len(array)
+
 ##print(dlugosc)
 ##print(ord(array[0]))
 
-for letter in range(dlugosc):
+for letter in range(len(array)):
     if (ord(array[letter])>=65 and ord(array[letter])<=90) or (ord(array[letter])>=97 and ord(array[letter])<=122) :
         letters=letters+1
     elif ord(array[letter])==32 :
