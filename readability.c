@@ -33,7 +33,7 @@ int main(void)
     //printf("Letters: %i\n", letters);
     //printf("Sentence: %i\n", sentences);
     
-    words++;//BECAUSE LAST WORD!!
+    //words++;//BECAUSE LAST WORD!!
     
     float L = (100*  (float) letters)/ (float) words;
     float S = (100 *  (float) sentences)/ (float) words;
