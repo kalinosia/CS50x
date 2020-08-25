@@ -6,4 +6,4 @@ while True:
     
     
 for i in range(1,n+1):
-    print(" "*(n-i), "#"*i,"","#"*i, " "*(n-i))
+    print( " "*(n-i), "#"*i,"  ","#"*i, sep="", end="\n")
