@@ -2,7 +2,7 @@ from cs50 import get_int
 number=get_int("Number: ")
 ##number=int(input("Number: "))
 
-
+'''
 def visa_check():
     num=number
     print(num)
@@ -34,6 +34,7 @@ def visa_check():
     
     if sum%10!=0: print("INVALID")
     else: print("VISA")
+'''
 
 if number<999999999999: print("INVALID\n")
 elif (number>=4*10**12 and number<5*10**12)or(number>=4*10**15 and number<5*10**15):
