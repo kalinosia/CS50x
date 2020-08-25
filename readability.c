@@ -26,16 +26,19 @@ int main(void)
         }
         else if(array[i] == 46 || array[i] == 63 || array[i] == 33){//. ? !
             sentences++;
+
         }
     }
     //printf("Words: %i\n", words);
     //printf("Letters: %i\n", letters);
     //printf("Sentence: %i\n", sentences);
     
+    words++;//BECAUSE LAST WORD!!
+    
     float L = (100*  (float) letters)/ (float) words;
     float S = (100 *  (float) sentences)/ (float) words;
     //printf("L: %f\n", L);
-    //printf("S: %f\n", S);
+    printf("S: %f\n", S);
     float index = 0.0588 * (float) L - 0.296 * (float) S - 15.8 ;
     //printf("Index: %f\n", index);
     index = round( index );
