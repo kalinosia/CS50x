@@ -27,16 +27,28 @@ for element in line:
     count = 0
     file_not_end = True
     index = 0
-    
+    b=0 ##index of find word before 
     while file_not_end:
         a = dna.find(element, index)  # find() returns -1 if the word is not found, 
                                       #start i the starting index from the search starts(default value is 0)
+        
         if a==-1:          #if pattern not found set flag to False
             file_not_end=False
+        elif b+(len(element)) == a: ##count only in line od corret words
+            count=count+1 
+            index=a+(len(element)) - 1
+            b=a
+        else:
+            index=a+(len(element)) - 1
+            b=a
+        
+        '''   THIS IS NOT I WANT BECAUSE THIS COUNT EVERY NOT LINE OF WORD      
         else:               # if word is found increase count and set starting index to a+1
-            count=count+1        
+            count=count+1        ##count every word 
             index = a + (len(element)) - 1
-            
+        '''   
+    
+    count=count+1 ##because first
     amount.append(count)
 ##print(amount) ##to check
 
@@ -61,11 +73,13 @@ for row in dataRead:
     
     if find==True: ##if value of every element was the same 
         name=row["name"] ##we have name
-        print("F" , name) 
+        print(name) 
         exit(1) ##end ?? or look for next with the same amout ?
-        
-    ##if row["name"]=='Lavender': print(row)
-        
+'''################################   
+    if row["name"]=='Hermione': 
+        for i in range((len(line))):
+            print(int(row[line[i]]), end=",")
+'''#############################################   
 if find==False: print("No match")
 
 ##print(amount)  
