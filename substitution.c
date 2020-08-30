@@ -98,7 +98,7 @@ int Array[len];
     const int alfabetAll[52]={65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
         97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122};
     //array TEXT to NUMBER
-    unsigned int arrayPlaintext[strlen(plaintext)];
+    unsigned int arrayPlaintext[strlen(plaintext)]; 
     for (int i=0; i < strlen(plaintext); i++){
         arrayPlaintext[i]=plaintext[i];
     }
@@ -118,6 +118,9 @@ int Array[len];
             }
     }
     
+    char bigLetter;
+    int bigLetterInt;
+    int smallLetterInt;
     printf("ciphertext: ");
     for (int z=0; z<strlen(plaintext); z++){ //for every letter in plaintext
         if (index[z]==-1) {
@@ -128,12 +131,12 @@ int Array[len];
         else {
             if (index[z]>=26){
                 index[z]=index[z]-26;
-                char bigLetter =KEY[index[z]];
+                bigLetter =KEY[index[z]];
                 //printf("%c", bigLetter);/////////////////
                 
-                int bigLetterInt = (int) bigLetter;
+                bigLetterInt = (int) bigLetter;
                 
-                int smallLetterInt=bigLetterInt+32;//122-90
+                smallLetterInt=bigLetterInt+32;//122-90
                     
                 printf("%c",smallLetterInt);
                 
