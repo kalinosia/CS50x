@@ -44,7 +44,7 @@ bool check(const char *word)
         }
         
     }
-    printf("Word: %s; name: %s.\n", word, name);
+    //printf("Word: %s; name: %s.\n", word, name);
     int address=0;
     for (int i=0; i<=26; i++){
         if ((int) word[0] == 65+i || (int) word[0] == 97+i){
