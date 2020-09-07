@@ -58,12 +58,12 @@ bool check(const char *word)
     {
         if (strcmp(prt->word,name)==0){
             free(name);
-            return false;
+            return true;
         }
         prt=prt->next;
     }
     free(name);
-    return true;
+    return false;
     
 }
 
