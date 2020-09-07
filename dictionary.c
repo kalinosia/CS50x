@@ -103,7 +103,7 @@ bool unload(void)
 {
     struct node *step;
     // TODO
-    
+    /*
     for (int i=0; i<N; i++){
         step=table[i];
         
@@ -125,6 +125,7 @@ bool unload(void)
         }
     }
     return true;
+    */
     /////////////////////////////////////////
     /* HOW IT WORKS FOR EXAMPLE
     step=table[182];
