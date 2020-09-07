@@ -37,7 +37,7 @@ bool check(const char *word)
     //strcpy(name, word);
     
     for (int a = 0; a < strlen(word); a++){ 
-        if (word[a]>=95 && (int) word[a]<=90){
+        if (word[a]>=65 && (int) word[a]<=90){
             name[a]=word[a]+26;
         }else{
             name[a]=word[a];
