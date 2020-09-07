@@ -57,25 +57,15 @@ bool check(const char *word)
     node *prt=table[address];
     while(prt!=NULL)
     {
-        if (strcmp(prt->word,name)){
+        if (strcmp(prt->word,name)==0){
             free(name);
-            return true;
+            return false;
         }
         prt=prt->next;
     }
     free(name);
-    return false;
-    /*
-    if (strcmp(table[address]->name,name)==0){
-        free(name);
-        return true;
-    }
-    else
+    return true;
     
-    
-    free(name);
-    return false;
-    */
 }
 
 // Hashes word to a number
@@ -157,9 +147,8 @@ bool unload(void)
         {
             while(table[i]->next==NULL){
                 step=step->next;
-                printf("%i: %s\n", i,step->word);
+                //printf("%i: %s\n", i,step->word);
                     if (step->next==NULL) {
-                        printf("unload");
                         free(step);
                         step=table[i];
                     }
