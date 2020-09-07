@@ -35,8 +35,7 @@ bool check(const char *word)
     //we need this?? probably not
     char *name = malloc(sizeof(char[strlen(word)])); //len(word) = [LENGTH + 1] ? 
     strcpy(name, word);
-    //printf("%s\n", name);
-    //printf("%s\n", word);
+    
     for (int a = 0; a < strlen(word); a++){ 
         if (word[a]>=95 && (int) word[a]<=90){
             name[a]=word[a]+26;
