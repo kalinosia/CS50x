@@ -37,14 +37,14 @@ bool check(const char *word)
     //strcpy(name, word);
     
     for (int a = 0; a < strlen(word); a++){ 
-        if ((int) word[a]>=65 && (int) word[a]<=90){
-            name[a]=word[a]+26;
+        if ((int) word[a] >= 65 && (int) word[a] <= 90){
+             name[a] =  word[a] +32;
         }else{
             name[a]=word[a];
         }
         
     }
-    
+    printf("Word: %s; name: %s.\n", word, name);
     int address=0;
     for (int i=0; i<=26; i++){
         if ((int) word[0] == 65+i || (int) word[0] == 97+i){
