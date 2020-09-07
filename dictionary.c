@@ -31,7 +31,51 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    
+    //we need this?? probably not
+    char *name = malloc(sizeof(char[strlen(word)])); //len(word) = [LENGTH + 1] ? 
+    strcpy(name, word);
+    //printf("%s\n", name);
+    //printf("%s\n", word);
+    for (int a = 0; a < strlen(word); a++){ 
+        if (word[a]>=95 && (int) word[a]<=90){
+            name[a]=word[a]+26;
+        }
+    }
+    
+    int address=0;
+    for (int i=0; i<=26; i++){
+        if ((int) word[0] == 65+i || (int) word[0] == 97+i){
+            for (int j=0; j<=26; j++){
+                if ((int) word[1] == 65+j || (int) word[1] == 97+j){
+                    address = i * 26 + j;
+                }
+            }
+        }
+    }
+    
+    node *prt=table[address];
+    while(prt!=NULL)
+    {
+        if (strcmp(prt->word,name)){
+            free(name);
+            return true;
+        }
+        prt=prt->next;
+    }
+    free(name);
     return false;
+    /*
+    if (strcmp(table[address]->name,name)==0){
+        free(name);
+        return true;
+    }
+    else
+    
+    
+    free(name);
+    return false;
+    */
 }
 
 // Hashes word to a number
@@ -103,7 +147,7 @@ bool unload(void)
 {
     struct node *step;
     // TODO
-    /*
+    
     for (int i=0; i<N; i++){
         step=table[i];
         
@@ -125,7 +169,7 @@ bool unload(void)
         }
     }
     return true;
-    */
+    
     /////////////////////////////////////////
     /* HOW IT WORKS FOR EXAMPLE
     step=table[182];
