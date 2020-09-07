@@ -59,7 +59,7 @@ bool check(const char *word)
     node *prt=table[address];
     while(prt!=NULL)
     {
-        if (strcasecmp(prt->word,name)==0){
+        if (strcmp(prt->word,name)==0){
             free(name);
             return true;
         }
