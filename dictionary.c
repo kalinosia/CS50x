@@ -32,7 +32,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    // to strcmp is good but i have strcasesmp
+    /* to strcmp is good but i have strcasesmp
     //we need this?? probably not
     char name[strlen(word)]; //= malloc(sizeof(char[strlen(word)])); //len(word) = [LENGTH + 1] ? gwiazdka prze name 
     //if (name == NULL) return -1; //??
@@ -46,7 +46,7 @@ bool check(const char *word)
         }
         
     }
-    //*/
+    */
     //printf("Word: %s; name: %s.\n", word, name);
     int address=0;
     for (int i=0; i<=26; i++){
@@ -60,13 +60,13 @@ bool check(const char *word)
     }
     //int h=hash(word);
     node *prt=table[address];
-    //bool yes=false;
+    
     if (prt==NULL) return false;
     while(prt!=NULL)
     {
+        //printf("while: %s  %s\n",prt->word, word );
         //if (strcmp(prt->word,name)==0){ //To compare two strings case-insensitively, you may find #strcasecmp# (declared in strings.h) useful!
-        //if (strcasecmp(prt->word,word)){ 
-        if (strcmp(prt->word,name)){     
+        if (strcasecmp(prt->word,word)==0){ 
             //free(name);
             //yes=true;
             return true;
