@@ -33,7 +33,8 @@ bool check(const char *word)
     // TODO
     
     //we need this?? probably not
-    char *name = malloc(sizeof(char[strlen(word)])); //len(word) = [LENGTH + 1] ? 
+    char name[strlen(word)]; //= malloc(sizeof(char[strlen(word)])); //len(word) = [LENGTH + 1] ? gwiazdka prze name 
+    //if (name == NULL) return -1; //??
     //strcpy(name, word);
     
     for (int a = 0; a < strlen(word); a++){ 
@@ -57,17 +58,20 @@ bool check(const char *word)
     }
     
     node *prt=table[address];
+    //bool yes=false;
     while(prt!=NULL)
     {
-        if (strcmp(prt->word,name)==0){
-            free(name);
+        //if (strcmp(prt->word,name)==0){ //To compare two strings case-insensitively, you may find #strcasecmp# (declared in strings.h) useful!
+        if (strcmp(prt->word,name)){ 
+            //free(name);
+            //yes=true;
             return true;
         }
         prt=prt->next;
     }
-    free(name);
-    return false;
-    
+    //if (yes==false) free(name);
+        return false;
+
 }
 
 // Hashes word to a number
@@ -111,14 +115,48 @@ bool load(const char *dictionary)
 
     while (fscanf(dic,"%s", scawor) != EOF)
     {
+            //find where in table if a, d or t ...
         int a = hash(scawor);
+            // Mallocs a node for each new word
         node *n=malloc(sizeof(node)); //przygotuj miejsce
         if (n == NULL) return false;
+            //Copies word into node if malloc succeeds
         strcpy(n->word, scawor);
+        
+        // Initializes head to point to hashtable index/bucket
+        node *head = table[a];
+
+        // Inserts new nodes at beginning of lists
+        if (head == NULL)
+        {
+            table[a] = n;
+            words++;
+        }
+        else
+        {
+            n->next = table[a];
+            table[a] = n;
+            words++;
+        }
+    }
+    //fclose(file);
+    
+    /*seams to work but probably something not enought...
         n->next=table[a];
         table[a]=n;
         words++;
     }
+    */
+    /*
+    struct node *step;
+    step=table[185]; // 182
+    printf("%s\n", table[185]->word); //hazy - 55689 in large 
+    step=step->next;
+    printf("%s\n", step->word); //hazlitt
+    //step=step->next;
+    //printf("%s\n", step->word); //hazing
+    */
+    //printf("%s\n", table[182]->next->word->);
     return true;
         
             
@@ -137,14 +175,80 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
+    int how_many=0;
+    
+    node *head = NULL;
+    node *cursor = head;
+    // freeing linked lists
+    for (int i=0; i<N; i++){
+        cursor=table[i];
+        while (cursor != NULL)
+        {
+            node *temp = cursor;
+            cursor = cursor->next;
+            free(temp);
+            how_many++;
+        }
+    }
+    
+    //printf("UNLOADED: %i\n", how_many);
+    if (words == how_many) return true;
+
+    else return false;
+    
+}
+
+    
+    /*
     struct node *step;
-    // TODO
+    //step=(node *)malloc(sizeof(node));
+    int how_many=0;
     
     for (int i=0; i<N; i++){
         step=table[i];
         
+        //free(step);
+        //how_many++;
+        
+        //if (step==NULL) continue;//??
+        while(1){
+            if (table[i] == NULL) break;
+            if (step->next == NULL && step != NULL)
+            {
+                //printf("string: %s", step->word);
+                free(step);
+                how_many++;
+                step=table[i];
+                continue;
+            }
+            while(step->next != NULL){
+                step=step->next;     
+            }
+            
+            
+        }*/
+           /* else if (step->next==NULL){
+                    free(step);
+                    printf("Go");
+                    how_many++;
+                    step=table[i];
+            }
+            
+            else 
+        }
+        */
+    //}
+        //double free or corruption (fasttop) Aborted */
+//////////////////////////////////////////////////////////////////////
+    /* WORK BUT NOT ENOUGH
+    for (int i=0; i<N; i++){
+        step=table[i];
+        
         if (step==NULL) continue;
-        else if (table[i]->next==NULL) free(step);
+        else if (table[i]->next==NULL) {
+            how_many++;
+            free(step);
+        }
         else
         {
             while(table[i]->next==NULL){
@@ -152,14 +256,26 @@ bool unload(void)
                 //printf("%i: %s\n", i,step->word);
                     if (step->next==NULL) {
                         free(step);
+                        how_many++;
                         step=table[i];
                     }
                     
             }
             free(step);
+            how_many++;
         }
     }
-    return true;
+    
+    printf("UNLOADED: %i\n", how_many);
+    if (how_many==words) return true;
+    else return false;
+    
+    //UNLOADED: 470 Could not unload dictionaries/large. */
+    
+    
+    
+    
+    
     
     /////////////////////////////////////////
     /* HOW IT WORKS FOR EXAMPLE
@@ -169,12 +285,10 @@ bool unload(void)
     printf("%s\n", step->word); //hazlitt
     step=step->next;
     printf("%s\n", step->word); //hazing
-    */
+    //*/
     
     
     
-    return false;
-}
 
 /*
 ///////////////////////////////////
