@@ -143,6 +143,7 @@ bool load(const char *dictionary)
             words++;
         }
     }
+    fclose(dic);
     //fclose(file);
     
     /*seams to work but probably something not enought...
