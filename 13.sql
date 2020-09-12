@@ -3,10 +3,28 @@
     Your query should output a table with a single column for the name of each person.
     There may be multiple people named Kevin Bacon in the database. Be sure to only select the Kevin Bacon born in 1958.
     Kevin Bacon himself should not be included in the resulting list.
-*/
-SELECT name FROM people
+DISTINCT*/
+SELECT  name FROM people
 JOIN stars 
 ON stars.person_id=people.id
 JOIN movies
-ON movies.movie_id=stars.movie_id
-WHERE (SELECT movies ??? name='Kevin Bacon'and birth=1958 ;
+ON movies.id=stars.movie_id
+WHERE title IN
+(SELECT title from movies 
+JOIN stars 
+ON stars.movie_id=movies.id
+JOIN people
+ON people.id=stars.person_id
+WHERE people.name='Kevin Bacon'and people.birth=1958);
+
+
+/*
+SELECT movies.id from movies
+
+JOIN stars 
+ON stars.movie_id=movies.id
+
+JOIN people
+ON people.id=stars.person_id
+WHERE people.name='Kevin Bacon'and people.birth=1958;
+*/

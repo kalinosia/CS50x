@@ -4,9 +4,19 @@
     You may assume that there is only one person in the database with the name Johnny Depp.
     You may assume that there is only one person in the database with the name Helena Bonham Carter.
 INTERSECT*/
+
 SELECT title FROM movies 
 JOIN stars
 ON stars.movie_id=movies.id
 JOIN people
 ON people.id=stars.person_id
-WHERE  name='Johnny Depp'; ///and name=Bonham Carter;
+WHERE  name='Johnny Depp' 
+
+INTERSECT
+
+SELECT title FROM movies 
+JOIN stars
+ON stars.movie_id=movies.id
+JOIN people
+ON people.id=stars.person_id
+WHERE name='Helena Bonham Carter';

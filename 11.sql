@@ -4,12 +4,13 @@ starting with the highest rated.
     Your query should output a table with a single column for the title of each movie.
     You may assume that there is only one person in the database with the name Chadwick Boseman.
 */
-SELECT title FROM movies
+SELECT  title FROM movies 
 JOIN stars
 ON stars.movie_id=movies.id
 JOIN people
 ON people.id = stars.person_id
 JOIN ratings
 ON ratings.movie_id = movies.id
-WHERE name='Chadwick Boseman'
-ORDER BY rating DESC;
+WHERE name='Chadwick Boseman' 
+ORDER BY rating DESC
+LIMIT 5 ;
