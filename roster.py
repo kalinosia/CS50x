@@ -11,7 +11,7 @@ if len(argv) != 2:
     
 ##Which house name
 house_name =argv[1] 
-print(house_name)
+##print(house_name)
 
 db = SQL("sqlite:///students.db")
 
