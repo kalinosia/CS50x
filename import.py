@@ -15,7 +15,7 @@ lines=csv.reader(databases) ##DIctReader
 
 ##      SQL     ##
 db=SQL("sqlite:///students.db")
-db.execute("DELETE FROM students") //DELETE DATA FROM DATABASE
+db.execute("DELETE FROM students") ##DELETE DATA FROM DATABASE
 
 word=0
 first_line =True
