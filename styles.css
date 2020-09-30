@@ -1,0 +1,103 @@
+
+/*
+body{
+    background-image:url("studnia.jpg");
+    background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  
+}
+*/
+#en{ /*not exist for now*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top:15px;
+    padding-right:30px;
+    color:#04047d77;
+    display:none;
+    
+}
+#logo
+{
+    height:50px;
+
+}
+#me{
+    margin:20px;
+    padding-top:50px;
+    
+}
+
+.tekst{
+    padding:50px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.tekst img{
+    Padding:20px;
+}
+
+.male{
+    width:64px;
+    height:64px;
+}
+
+footer{
+    width:100%;
+    text-align: center;
+    
+    margin:0;
+    opacity:0.7;
+    
+    position:absolute;
+}
+
+body html{
+    height:100%;
+    margin:0;
+}
+
+
+#bezDodatkow{
+    border:none;
+    background-color:transparent;
+    padding:0;
+}
+
+
+
+
+
+
+
+
+
+#button{
+    text-align:center;
+    margin-bottom:50px;
+}
+.startButton {
+	background:linear-gradient(to bottom, #dae089 5%, #fff08f 100%);
+	background-color:#dae089;
+	border-radius:19px;
+	display:inline-block;
+	cursor:pointer;
+	color:#636e5a;
+	font-family:Georgia;
+	font-size:16px;
+	font-weight:bold;
+	padding:8px 16px;
+	text-decoration:none;
+}
+.startButton:hover {
+	background:linear-gradient(to bottom, #fff08f 5%, #dae089 100%);
+	background-color:#fff08f;
+}
+.startButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*style="border-bottom: 1px solid #e5e5e5;"
+*/

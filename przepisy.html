@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        
+         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        
+        <title>My Webpage</title>
+        
+    </head>
+    <body>
+
+        <div class="container">
+            
+            <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 " style="    margin-bottom: 0px !important;">
+                <a href="index.html" class="my-0 mr-md-auto front-weight-normal">
+                  <img class="my-0 mr-md-auto front-weight-normal" id="logo" src="logo.jpg" alt="logo"/>
+                </a>
+                <header class="blog-header ">
+        
+                <nav class="my-2 my-md-0 mr-md-3">
+                  <a class="p-3 text-muted" href="teoria.html">Teoria</a>
+                  <a class="p-3 text-muted" href="narzedzia.html">Narzędzia</a>
+                  <a class="p-3 text-muted" href="przepisy.html">Przepisy</a>
+                  <a class="p-3 text-muted" href="kontakt.html">Kontakt</a><!--PROBLEMY?-->
+                  
+                </nav></header>
+             </div>
+            <style="margin:50px;"></style>
+            
+            <!--div class="row row-cols-1 row-cols-md-3"-->
+            <div class="card-columns">     
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/niezywiecin.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Nieżywięcin</h5>
+                    <p class="card-text">Twój pierwszy ser podpuszczkowy. Naucz się robić sery zaczynając od tej receptury.</p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropNiezywiecin">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropNiezywiecin" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Nieżywięcin </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Nieżywięciny to serki pochodzące z czystych ekologicznie terenów okolic Borów Tucholskich, niewielkiej wioseczki o nazwie Nieżywięć. 
+                              Produkowane z niepasteryzowanego mleka od wypasanej na łące krówki, dojonej ręcznie. 
+                              Najczęściej występują w formie okwieconej - z dodatkiem suszonych lub świeżych kwiatów własnoręcznie zbieranych na łąkach oblanych słońcem. 
+                              </p>
+                              <h5>Składniki:</h5>
+                              <ul>
+                                <li>mleko (oczywiście najlepsze jest prosto od krowy i czyste bakteriologicznie)</li>
+                                <li>podpuszczka</li>
+                                <li>bakterie mezofile (w tym przypadku były to Probat222)<br><br></li>
+                              </ul>
+                              <h5>Przygotowanie:</h5>
+                              <ol>
+                                <li>Mleko ogrzewamy do 34<sup>o</sup>C i dodajemy bakterie mezofilne (tu Probat 222) - ukwaszamy 1h.</li>
+                                <li>Po tym czasie dodajemy odpowiednio odmierzoną ilość podpuszczki (mleko powinno mieć ok 32C w momencie dodawania podpuszczki.</li>
+                                <li>Czekamy na skrzep (30-40min) - jak ten pozytywnie przejdzie test na złom czy "trzech palców" zaczynamy delikatne krojenie</li>
+                                <li>Najpierw kroimy w kostkę 4cmX4cm - czekamy kilka minut i kontynuujemy delikatne krojenie do uzyskania ziarna o wymiarach ziarnka kukurydzy :) (cały proces krojenia może zająć 30min lub dłużej)</li>
+                                <li>Następnie ogrzewamy ziarno (najlepiej w kąpieli wodnej) do temperatury 35-37C - delikatnie mieszamy, aż do momentu stwierdzenia, że pojedyncze ziarenka po przegryzieniu skrzypią</li>
+                                <li>To jest moment w którym zlewamy z nad ziarna tyle serwatki ile się uda i dodajemy suszone lub świeże płatki chabra bławatka, nasturcji, nagietka czy innego jadalnego pięknisia :) Tu mała uwaga - w przypadku zastosowania świeżych płatków - zbierzmy je na kilka godzin przed produkcją serka i rozłóżmy na gazecie, aby dać czas na ewakuację mieszkającym w nich mieszkańcom :P</li>
+                                <li>Ziarno mieszamy z płatkami i przekładamy do form.</li>
+                                <li>Serek po wstępnym ociekaniu można kapkę obciążyć - ale tak naprawdę delikatnie (u mnie szklanka wody jako obciążenie serka kilogramowego w zupełności się sprawdza).</li>
+                                <li>Solimy z ręki nie więcej niż 2% wagi serka / lub w solance - 1h na każde 100g serka solanka 18% w temp 14C.</li>
+                              </ol>
+                              <br/><br/>Źródło: https://domowyserowar.pl/przepisy/13-niezywiecin.html<br/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/korycin.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Korycin</h5>
+                    <p class="card-text">Podobny do nieżywęcina.</p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropKorycin">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropKorycin" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog  modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Korycin</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                2005 roku został wpisany na listę tradycyjnych produktów przez Ministerstwo Rolnictwa i Rozwoju Wsi. 
+                                Natomiast w 2012 roku otrzymał unijny certyfikat chroniący produkty regionalne. 
+                                Dzięki temu tylko ser produkowany w gminie Korycin może nosić taką nazwę, cechują go przy tym niepowtarzalne walory smakowe. 
+                                Produkowany jest od połowy XVII wieku. Jak głoszą ludowe przekazy, od czasu potopu szwedzkiego, po którym walczący po stronie polskiej szwajcarzy przekazali przepis miejscowej ludności.
+                              </p>
+                              <h5>Składniki:</h5>
+                              <ul>
+                                <li>mleko bezwzględnie niepasteryzowane</li>
+                                <li>podpuszczka</li>
+                                <li>sól<br><br></li>
+                              </ul>
+                              <h5>Przygotowanie:</h5>
+                              <ul>
+                                <li style="text-align: justify;">świeże mleko krowie wlewamy do dużego garnka, następnie podgrzewamy do temperatury 37 °C (należy zaopatrzyć się w odpowiednie narzędzia mierzące temperaturę i pamiętać, że z określonej ilości mleka uzyskamy mniej więcej 1/10 sera),</li>
+                                <li style="text-align: justify;">temperaturę należy stale kontrolować – zależnie od niej mleko może się odpowiednio nie ściąć,</li>
+                                <li style="text-align: justify;">po osiągnięciu pożądanej temperatury dodajemy podpuszczkę i mieszamy (na 10 litrów mleka – czyli ok. 1 kg sera, dodajemy zwykle 0,5 grama podpuszczki),</li>
+                                <li style="text-align: justify;">na tym etapie produkcji, zależnie od preferencji smakowych, można dodawać różne przyprawy, jednak przy zachowaniu świadomości, iż nie będzie to już ser koryciński tradycyjny,</li>
+                                <li style="text-align: justify;">po wymieszaniu podpuszczki z mlekiem, co zwykle trwa dwie minuty, należy zatrzymać podgrzewanie mleka i odstawić garnek na ok. 30 minut – w tym czasie podpuszczka ma skoagulować mleko do konsystencji galaretki,</li>
+                                <li style="text-align: justify;">pozostającą w garnku, ściętą część należy pokroić w kostkę i pozostawić na kolejne pół godziny,</li>
+                                <li style="text-align: justify;">następnym krokiem jest oddzielenie skoagulowanego mleka od wydzielonej z niego serwatki,</li>
+                                <li style="text-align: justify;">po odsączeniu pozostaje właściwy ser, który trzeba poddać kolejnej obróbce, a dokładnie odsączaniu w specjalnym, nadającym mu kształt sicie, które powinno trwać 24 godziny,</li>
+                                <li style="text-align: justify;">kolejną czynnością jest moczenie wstępnie uformowanego sera w solance, co również obejmuje 24 godziny,</li>
+                                <li style="text-align: justify;">po moczeniu w solance ser należy wyciągnąć i przełożyć na około 6 godzin w suche miejsce do schnięcia,</li>
+                                <li style="text-align: justify;">następnie przechowywać, domowym sposobem, w lodówce (ser nadaje się do spożycia niemal od razu, jednak najlepszy smak osiąga po kilku tygodniach).</li>
+                                </ul>
+                                
+                                <br/><br/><p>Źródło: https://serowarpodlaski.pl/ser-korycinski-przepis-na-idealny-ser-domowej-roboty/</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/ricotta.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Ricotta</h5>
+                    <p class="card-text">Twarożek. Pyszny kremowy. Zrób po serze podpuszczkowym, czyli wykorzystaj ile się da.</p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropRicotta">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropRicotta" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Ricotta</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                Ricotta z serwatki jest serem zwarowym. Jest to ser włoski, bardzo delikatny i miękki. 
+                                Jego przygotowanie jest banalnie proste i pozwala na wykorzystanie serwatki, powstałej po produkcji serów podpuszczkowych.
+                              </p>
+                              <h5>Składniki:</h5>
+                              <ul>
+                                <li>serwatka pozostała po warzeniu sera podpuszczkowego</li>
+                                <li>ocet jabłkowy</li>
+                                <li>mleko (ja robię bez)</li>
+                              </ul>
+                              <h5>Przygotowanie:</h5>
+                              <ol>
+                                <li>Podgrzać serwatkę do 70 <sup>o</sup>C</li>
+                                <li>Dodać ok. 10% mleka w stosunku do objętości serwatki</li>
+                                <li>Podgrzać całość do 90 <sup>o</sup>C cały czas mieszając</li>
+                                <li>Dodać ocet jabłkowy w ilości ok. 50ml na 10l</li>
+                                <li>Zamieszać energicznie i zostawić obserwując tworzenie się "kłaczków" ricotty</li>
+                                <li>Odczekać do 20 minut</li>
+                                <li>Zebrać wytworzony skrzep i przełożyć w chustę bądź specjalne formy do ricotty</li>
+                                <li>Pozostawić do odcieknięcia na kilka godzin</li>
+                                <li>Schłodzić do temperatury lodówkowej, najlepiej zjeść w ciągu tygodnia.</li>
+                              </ol>
+                              <br/><br/><p>Źródło: https://domowyserowar.pl/przepisy/8-ricotta.html</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/szampan.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Szampańska zabawa</h5>
+                    <p class="card-text">Jeżeli chcesz naprawdę wykorzystać ile się da to jeszcze na koniec zrób szampana z serwatki. Zaszalej.<span class="badge badge-danger">Przepis nieprzetestowany!</span></p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropSzampan">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropSzampan" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Szampan</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Tu będzie przepis
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/halloumi.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Halloumi</h5>
+                    <p class="card-text">Jeżeli nie masz wokół fanów korycina/nieżywęcina spróbuj halloumina. Z grila czy z patelni zachwyca większość!</p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropHalloumi">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropHalloumi" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Halloumi</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Tu będzie przepis
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/chongos.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Chongos Zamoranos</h5>
+                    <p class="card-text">Meksykański deser z cynamonową nutą. Coś niespotykanego i ciekawego.<span class="badge badge-danger">Przepis nieprzetestowany!</span></p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropChongos">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropChongos" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Chongos Zamoranos</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Tu będzie przepis
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/jogurt.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Jogurt</h5>
+                    <p class="card-text">Jeżeli masz ochotę na jogurt naturalny lub grecki, masz mleko i odrobinę jogurtu koniecznie spróbuj go rozmnożyć.<span class="badge badge-danger">Przepis nieprzetestowany!</span></p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropJogurt">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropJogurt" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Jogurt</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Tu będzie przepis
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="card h-100">
+                  <img src="image/gruzinski.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Ser gruziński</h5>
+                    <p class="card-text">Do chaczapuri jak znalazł. Proste i smaczne.<span class="badge badge-danger">Przepis nieprzetestowany!</span></p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropGruzinski">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropGruzinski" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Gruziński</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Tu będzie przepis
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4" style="display:none;">
+                <div class="card h-100">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Szampańska zabawa</h5>
+                    <p class="card-text">Jeżeli chcesz naprawdę wykorzystać ile się da to jeszcze na koniec zrób szampana z serwatki. Zaszalej.<span class="badge badge-danger">Przepis nieprzetestowany!</span></p>
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#staticBackdropNiezywiecin">
+                    Zobacz przepis
+                    </button>
+                    <!-- Modal -->
+                      <div class="modal fade " id="staticBackdropNiezywiecin" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Tu będzie przepis
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- MODAL END -->
+                  </div>
+                </div>
+              </div>
+</div>
+
+
+        
+          
+        </div>
+        
+        <footer>
+            <hr class="featurette-divider">
+          <p>Author: Kalinowska&reg;</p>
+          <p>Go to my <a href="https://github.com/kalinosia">Github</a> to see more.</p>
+          
+        </footer>
+        
+        
+      <script>
+            // MDB Lightbox Init
+            (function () {
+            ("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+            });
+
+          $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+          })
+        </script>
+    </body>
+</html>
