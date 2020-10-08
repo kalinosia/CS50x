@@ -1,0 +1,144 @@
+BUY
+
+rows=db.execute("SELECT * FROM owners WHERE user_id=:id", id=session['user_id'])
+    
+    table=""
+    total=0
+    
+    if len(rows)!=0:
+        for row in rows:
+            table=table+"<tr>"
+            i=0
+            rice=0
+            for column in row:
+                
+                if i==0 or i==1:
+                    i=i+1
+                    continue
+                if i==2:
+                    #SYMBOL
+                    table=table+"<td>"
+                    table=table+column
+                    table=table+"</td>"
+                
+                    check=lookup(column)
+                    
+                    if check==None:
+                        return apology("symbol does not exist??WTF", 403) ##?????????????
+                    else:
+                        price=check["price"]
+                        #NAME
+                        table=table+"<td>"
+                        table=table+check["name"]
+                        table=table+"</td>"
+                        
+                        i=i+1
+                    
+                if i==3:
+                    table=table+"<td>" #SHARES
+                    table=table+column
+                    table=table+"</td>"
+                
+                    table=table+"<td>" #PRICE
+                    table=table+price
+                    table=table+"</td>"
+                    i=i+1
+                    
+                    price=price*column #ALL price
+                    
+                    table=table+"<td>" #TOTAL
+                    table=table+price
+                    table=table+"</td>"
+                    
+                    total=total+price
+            table=table+"</tr>"
+        
+    cash=db.execute("SELECT cash FROM users WHERE id=:id", id=session['user_id'])
+    
+    total=total+cash
+    return apology(table)
+    return render_template("index.html", table, cash, total)
+    ##return apology("TODO")
+    
+    
+    
+    
+    SECOND
+    
+   HTML: 
+   <tbody>
+    <form action="/" method="post">
+      hello, {{ tablep }}
+    </form>
+    <tr>
+      <td>CASH</td>
+      <td>.....
+      
+application.py
+buy
+@app.route("/")
+@login_required
+def index():
+    """Show portfolio of stocks"""
+    
+    rows=db.execute("SELECT symbol, shares FROM owners WHERE user_id=:id", id=session['user_id'])
+    
+    table=""
+    total=0
+    
+    if len(rows) !=0:
+        for row in rows:
+            table=table+"<tr></br>"
+            price=0
+            
+            symbol=row["symbol"]
+            shares=row["shares"]
+            
+            #SYMBOL
+            table=table+"<td>"
+            table=table+symbol
+            table=table+"</td>"
+                
+            check=lookup(symbol)
+                    
+            if check==None:
+                return apology("sorry, have some problems...", 403) ##?????????????
+            else:
+                price=check["price"]
+            #NAME
+                table=table+"<td>"
+                table=table+check["name"]
+                table=table+"</td>"
+            #SHARES    
+            table=table+"<td>" 
+            table=table+str(shares)
+            table=table+"</td>"
+            #PRICE    
+            table=table+"<td>" 
+            table=table+str(price)
+            table=table+"</td>"
+                   
+            price=price*shares #ALL price
+            #TOTAL        
+            table=table+"<td>" 
+            table=table+str(price)
+            table=table+"</td>"
+             
+            total=total+price      
+            
+            table=table+"</tr></br>"
+        
+    cashrow=db.execute("SELECT cash FROM users WHERE id=:id", id=session['user_id'])
+    cash=cashrow[0]["cash"]
+    total=total+cash
+    ##return apology(table)
+    return render_template("index.html",  tablep=table, cash=cash, total=total)
+    ##return apology("TODO")
+    
+    
+    
+    
+    
+    
+    (check.get(row["symbol"])["price"])*(row["shares"])
+
