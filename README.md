@@ -1,1 +1,1 @@
-# kalinosia
+![certyfikat](CS50x.png "game")
